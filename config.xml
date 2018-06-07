@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns     = "http://www.w3.org/ns/widgets"
+		xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "com.designge.mltaxidriver"
+	    versionCode="15" 
+        version   = "1.0.1"
+		package="com.designge.mltaxidriver"
+		xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <name>MLTaxi Driver</name>
+	<icon src="taxi.png" />
+
+
+<platform name="android">
+	<preference name="android-minSdkVersion" value="18"/>
+	<allow-intent href="market:*"/>
+	<config-file target="AndroidManifest.xml" parent="/*">
+		<!--<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />-->
+		<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+		<uses-feature android:name="android.hardware.location.gps" />
+	</config-file>
+</platform>
+
+	<access origin="*" />
+	<allow-intent href="*" />
+	<allow-navigation href="*" />
+
+	<platform name="ios">
+		<allow-intent href="itms:*" />
+		<allow-intent href="itms-apps:*" />
+	</platform>
+
+	<preference name="permissions" value="none"/>
+    <preference name="target-device" value="handset"/>
+    <preference name="phonegap-version" value="cli-8.0.0"/>
+
+    <preference name="webviewbounce" value="false"/>
+    <preference name="DisallowOverscroll" value="true"/>
+    <preference name="fullscreen" value="true"/>
+    <preference name="keepRunning" value="true"/>
+    <preference name="exit-on-suspend" value="false"/>
+	<preference name="stay-in-webview"            value="true" /> 
+	<!--<preference name="Orientation" value="portrait"/>-->
+	<preference name="exit-on-suspend"            value="false" />          
+<preference name="show-splash-screen-spinner" value="false" />    
+<preference name="auto-hide-splash-screen"    value="false" />
+<preference name="disable-cursor"             value="false" />
+<preference name="android-minSdkVersion"      value="11" />         
+<preference name="android-installLocation"    value="auto" />
+<preference name="EnableViewportScale"    value="true" />
+
+    <description>
+     MLTaxi Driver App 
+    </description>
+	
+
+    <author href="http://design.ge" email="uabashidze@gmail.com">
+        Cyborg-Mcloud
+    </author>
+
+
+    <plugins>
+
+    </plugins>
+
+	<feature name="http://api.phonegap.com/1.0/geolocation"/>
+	<feature name="http://api.phonegap.com/1.0/device" />
+
+	<feature name="http://api.phonegap.com/1.0/network"/>
+
+
+	<feature name="Compass">
+		<param name="android-package" value="org.apache.cordova.deviceorientation.CompassListener" />
+	</feature>
+
+
+	<feature name="App">
+	  <param name="android-package" value="com.designge.locage"/>
+	</feature>
+	
+	<gap:plugin name="cordova-plugin-fullscreen" source="npm" />
+	<gap:plugin name="cordova-plugin-whitelist" source="npm" />
+   <gap:plugin name="cordova-plugin-request-location-accuracy" source="npm" />
+	<gap:plugin name="cordova-plugin-powermanagement" source="npm" />
+	<gap:plugin name="cordova-plugin-geolocation" source="npm"/>
+	<gap:plugin name="cordova-plugin-file" source="npm"  />
+	<gap:plugin name="cordova-plugin-network-information"  source="npm"/>
+	<gap:plugin name="cordova-plugin-file-transfer"   source="npm"/>
+	<gap:plugin name="de.appplant.cordova.plugin.local-notification" version="0.8.4"  source="npm"/>
+<plugin name="cordova.plugins.diagnostic" source="npm" />
+	<plugin name="cordova-plugin-globalization" source="npm" />
+	<plugin name="cordova-plugin-dialogs" spec="^1.3.4"/>
+	<gap:plugin name="cordova-plugin-device-orientation" source="npm" />
+
+		<plugin name="cordova-android-support-gradle-release" spec="^1.1.1">
+    <variable name="ANDROID_SUPPORT_VERSION" value="26.0.1" />
+</plugin>
+
+<!--
+<preference name="Orientation" value="portrait" />-->
+
+</widget>

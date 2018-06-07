@@ -1,0 +1,45 @@
+
+	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, 
+	function(fileSystem)
+		{
+		
+		fileSystem.root.getFile("mytaxi/maps/dummy.html", {create: true, exclusive: false}, 
+		function gotFileEntry(fileEntry) 
+			{
+			var sPath =fileEntry.fullPath.replace("dummy.html","");
+			var fileTransfer = new FileTransfer();
+			
+			console.log("downloading: "+fileSystem.root.toURL()+" mytaxi/maps/" + tilename);
+			fileTransfer.download(tilelink,	fileSystem.root.toURL() + "mytaxi/maps/" + tilename,	function(theFile) {
+				theFile.file(
+					function(fileObj) 
+						{
+						if (fileObj.size<9 && retry<5)
+							{downtile(smap, szoom, A, B, i, ii, retry+1);
+							console.log("file size too small: "+ smap+"/"+ szoom+"_"+ A+"_"+ B+".png "+ i+ " : " +ii); 
+							} 
+						else
+							{
+							console.log("carmateba:  "+ smap+"/"+ szoom+"_"+ A+"_"+ B+".png "+ i+ " : " +ii); 
+							document.getElementById("img_"+i+"-"+ii).src="file:///storage/emulated/0/mytaxi/maps/"+smap+"/"+szoom+"_"+A+"_"+B+".png";
+	//						down_complete=1;file_downing=1;
+							}
+						}
+					);
+					DrawHomePos();
+					},	function(error) {
+							// download ERROR
+							console.log("download error source " + error.source);
+							console.log("download error target " + error.target);
+							console.log("upload error code: " + error.code);
+							if (retry<4)
+								{
+								console.log("retring: "+tilename+" number: "+retry);
+								downtile(smap, szoom, A, B, i, ii, retry+1);
+								}
+							else {//down_complete=1;file_downing=1;
+								console.log("sheveshvi: "+tilename+" number: "+retry);
+								}
+					}, { 'Connection': 'close', 'chunkedMode': 'false' });
+			}, fail);
+		}, fail);	
