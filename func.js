@@ -84,12 +84,12 @@ function datvale_pussy(met)
 	var tanxa=0;
 	if (met<4)
 		{
-		tanxa=sit_price;
+		tanxa=sit_price[call_class];
 		}
 	else
 		{
 		met=met-4;
-		tanxa=parseInt( (met*kmprice+sit_price)*100 )/100;	
+		tanxa=parseInt( (met*kmprice[call_class]+sit_price[call_class])*100 )/100;	
 		}
 	return tanxa;
 	}

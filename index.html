@@ -244,13 +244,24 @@ function MainProg()
 var call_dest_lat=0;
 var call_dest_long=0;
 var call_dest_addr="";
-var sit_price=3;
-var kmprice=0.65;
+var sit_price=new Array();
+var kmprice= new Array();
+
+sit_price[1]=2;
+sit_price[2]=3;
+sit_price[3]=4;
+
+kmprice[1]=0.5;
+kmprice[2]=0.6;
+kmprice[3]=0.75;
+var last_status=0;
+
 
 var call_tel="";
 var call_meters=0;
 var last_route=0;
 var this_time=0;
+var call_class=1;
 function update_data()
 	{		
 	if(gamehttp.readyState == 4)
@@ -291,6 +302,7 @@ function update_data()
 					call_dest_lat=parseFloat(b[6]);
 					call_dest_long=parseFloat(b[7]);
 					call_dest_addr=b[8];
+					call_class=b[9];
 					draw_markers();
 					set_status(101);
 					ertxelmainc=1;
@@ -321,7 +333,7 @@ function update_data()
 					call_dest_lat=parseFloat(b[6]);
 					call_dest_long=parseFloat(b[7]);
 					call_dest_addr=b[8];
-
+					call_class=b[9];
 
 					ertxelmainc=1;
 					if (calllat>30 && (this_time-last_route)>30 && (myself==0 || mystatus!=1))
@@ -357,9 +369,9 @@ function update_data()
 					call_dest_lat=parseFloat(b[6]);
 					call_dest_long=parseFloat(b[7]);
 				//	call_dest_addr=b[8];
-				
+					call_class=b[9];
 					ertxelmainc=1;
-					if (call_dest_lat>30 && (this_time-last_route)>30  && (myself==0 || mystatus!=3))
+					if (call_dest_lat>30 && (this_time-last_route)>10  && (myself==0 || mystatus!=3))
 						{
 						var startpos = {lat: MyLat, lng: MyLong};
 						var endpos = {lat: calllat, lng: calllong};
@@ -384,7 +396,7 @@ function update_data()
 					txt_addr=b[3];
 					call_tel=b[4];
 					call_meters=b[5];
-
+					call_class=b[9];
 					call_dest_lat=parseFloat(b[6]);
 					call_dest_long=parseFloat(b[7]);
 					//call_dest_addr=b[8];
@@ -413,7 +425,7 @@ function update_data()
 					txt_addr=b[3];
 					call_meters=b[5];
 					call_tel=b[4];
-
+					call_class=b[9];
 					var metrebi=parseInt(10*call_meters/1000)/10;
 					var metrebi_real=parseInt(metrebi*1.12*100)/100;
 					var	tanxa=datvale_pussy(metrebi_real);
