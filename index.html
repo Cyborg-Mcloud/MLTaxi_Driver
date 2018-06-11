@@ -320,13 +320,13 @@ function update_data()
 					draw_markers();
 					set_status(101);
 					ertxelmainc=1;
-					if (call_dest_lat>30 && (this_time-last_route)>30)
+					if (call_dest_lat>30 && (this_time-last_route)>10)
 						{
 						var startpos = {lat: calllat, lng: calllong};
 						var endpos = {lat: call_dest_lat, lng: call_dest_long};
 						var thirdpos = {lat: call_dest_lat1, lng: call_dest_long1};
 						myself=0;
-						calcRoute(startpos, endpos, dirService, dirRender);
+						calcRoute(startpos, endpos, dirService, dirRender, thirdpos, call_dest_lat1);
 						
 
 						}
@@ -355,17 +355,17 @@ function update_data()
 					call_dest_addr1=b[12];
 
 					ertxelmainc=1;
-					if (calllat>30 && (this_time-last_route)>30 && (myself==0 || mystatus!=1))
+					if (calllat>30 && (this_time-last_route)>10 && (myself==0 || mystatus!=1))
 						{
 						var startpos = {lat: MyLat, lng: MyLong};
 						var endpos = {lat: calllat, lng: calllong};
 						var thirdpos = {lat: call_dest_lat1, lng: call_dest_long1};
-						calcRoute(startpos, endpos, dirService, dirRender);
+						calcRoute(startpos, endpos, dirService, dirRender, thirdpos, 0);
 						}
 
 					if (callid!=curid && myself==0)
 						{
-						setme();
+//						setme();
 						}
 					draw_markers();
 					set_status(1);
@@ -401,7 +401,7 @@ function update_data()
 						var startpos = {lat: MyLat, lng: MyLong};
 						var endpos = {lat: calllat, lng: calllong};
 						var thirdpos = {lat: call_dest_lat1, lng: call_dest_long1};
-						calcRoute(startpos, endpos, dirService, dirRender);
+						calcRoute(startpos, endpos, dirService, dirRender, thirdpos, 0);
 						}
 					draw_markers();
 					set_status(3);
@@ -433,7 +433,7 @@ function update_data()
 						var startpos = {lat: MyLat, lng: MyLong};
 						var endpos = {lat: call_dest_lat, lng: call_dest_long};
 						var thirdpos = {lat: call_dest_lat1, lng: call_dest_long1};
-						calcRoute(startpos, endpos, dirService, dirRender);
+						calcRoute(startpos, endpos, dirService, dirRender, thirdpos, call_dest_lat1);
 						}
 					draw_markers();
 					set_status(4);
@@ -469,7 +469,7 @@ function update_data()
 						var startpos = {lat: MyLat, lng: MyLong};
 						var endpos = {lat: call_dest_lat, lng: call_dest_long};
 						var thirdpos = {lat: call_dest_lat1, lng: call_dest_long1};
-						calcRoute(startpos, endpos, dirService, dirRender);
+						calcRoute(startpos, endpos, dirService, dirRender, thirdpos, call_dest_lat1);
 
 						}
 					if (callid!=curid && myself==0) {setme();}
@@ -745,6 +745,7 @@ function draw_markers()
 	if (call_dest_lat1>0)
 		{
 		var myLatLng = {lat: call_dest_lat1, lng: call_dest_long1};
+		console.log("third marker: "+myLatLng);
 		thirdMarker.setPosition(myLatLng);
 		thirdMarker.setMap(mymap);
 		}

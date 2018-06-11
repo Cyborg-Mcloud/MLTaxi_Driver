@@ -200,15 +200,39 @@ function getPosition(loc) {
     }
 }
 var dirsetmap=0;
-function calcRoute(from_loc, to_loc, directionsService, directionsDisplay) {
+function calcRoute(from_loc, to_loc, directionsService, directionsDisplay, third_loc, third_lata) {
     var start = from_loc;
     var end = to_loc;
 	last_route=Date.now()
-	var request = {
-        origin: start,
-        destination: end,
-        travelMode: google.maps.TravelMode.DRIVING
-    };
+
+	if (thir_lata>0)
+		{
+		var waypts = [];
+		 waypts.push({
+              location: end,
+              stopover: true
+            });
+	
+
+		var request = {
+			origin: start,
+			destination: third_loc,
+			waypoints: waypts,
+			optimizeWaypoints: true,
+			travelMode: google.maps.TravelMode.DRIVING,
+			unitSystem:google.maps.UnitSystem.METRIC
+			};
+
+		}
+	else
+		{
+		var request = {
+			origin: start,
+			destination: end,
+			travelMode: google.maps.TravelMode.DRIVING,
+			unitSystem:google.maps.UnitSystem.METRIC
+			};
+		}
 
 
     directionsService.route(request, function (response, status) {
@@ -218,13 +242,14 @@ function calcRoute(from_loc, to_loc, directionsService, directionsDisplay) {
            // addMarker(endMarker, mymap, getPosition(route.end_location), mymapgetBounds());
             directionsDisplay.setDirections(response);
 			if (dirsetmap==0)
-				{directionsDisplay.setMap(mymap); dirsetmap=1; 
-				
-				}
-			if (myself==1)
 				{
-				mymap.panTo(positionMarker.getPosition());
+				directionsDisplay.setMap(mymap); dirsetmap=1; 
 				}
+
+			//if (myself==1)
+			//	{
+			//	mymap.panTo(positionMarker.getPosition());
+			//	}
 
         } else {
         //    addMarkers(mymap, [from_loc, to_loc], mymapgetBounds());
