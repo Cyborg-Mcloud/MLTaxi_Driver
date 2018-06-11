@@ -512,11 +512,11 @@ function UpData()
 
 	if (MyUser!="nouser")
 		{    
-		url="http://mltaxi.ge/taxi.php?uname="+MyUser+"&pass="+MyPass+"&lat="+MyLat+"&long="+MyLong+"&alt="+MyAlt+"&head="+MyHead+"&speed="+MySpeed+"&passive="+inpause+"&mstat="+mystatus+"&callid="+callid;		
+		url="http://mltaxi.ge/taxi.php?uname="+MyUser+"&pass="+MyPass+"&lat="+MyLat+"&long="+MyLong+"&alt="+MyAlt+"&head="+MyHead+"&speed="+MySpeed+"&passive="+inpause+"&mstat="+mystatus+"&callid="+callid +"&ragacid="+(Math.random()*10000000);		
 		}
 	else
 		{
-		url="http://mltaxi.ge/taxi.php?passive="+inpause;
+		url="http://mltaxi.ge/taxi.php?passive="+inpause+"&ragacid="+(Math.random()*10000000); 
 		}
 	console.log("-- upload: "+url);
 //	document.getElementById('erorebi').innerHTML="uname="+MyUser+"&pass="+MyPass+"&lat="+MyLat+"&long="+MyLong+"&alt="+MyAlt+"&head="+MyHead+"&speed="+MySpeed;
