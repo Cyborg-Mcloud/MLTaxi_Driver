@@ -1,7 +1,7 @@
 
 var infoWindow, tempMarker, geocoder;
 var dirService, dirRender;
-var startMarker, endMarker, positionMarker;
+var startMarker, endMarker, thirdMarker, positionMarker;
 var startPosListener, endPosListener, selPosListener;
 
 function geocodeLocation(position, infoWindow, markerName) {
@@ -78,6 +78,10 @@ console.log("mere");
     });
 
     endMarker = new google.maps.Marker({
+        icon: END_ICON, map: mymap
+    });
+
+	thirdMarker = new google.maps.Marker({
         icon: END_ICON, map: mymap
     });
     positionMarker = new google.maps.Marker({
