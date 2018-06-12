@@ -353,7 +353,7 @@ function update_data()
 					call_dest_lat1=parseFloat(b[10]);
 					call_dest_long1=parseFloat(b[11]);
 					call_dest_addr1=b[12];
-
+console.log(call_dest_lat1+" <- -> "+call_dest_long1);
 					ertxelmainc=1;
 					if (calllat>30 && (this_time-last_route)>10 && mystatus!=1)
 						{
@@ -425,8 +425,12 @@ function update_data()
 					call_class=b[9];
 					call_dest_lat=parseFloat(b[6]);
 					call_dest_long=parseFloat(b[7]);
+
+					call_dest_lat1=parseFloat(b[10]);
+					call_dest_long1=parseFloat(b[11]);
+					call_dest_addr1=b[12];
 					//call_dest_addr=b[8];
-					
+					console.log(call_dest_lat1+" <- -> "+call_dest_long1);
 					ertxelmainc=1;
 					if (call_dest_lat>30 && (this_time-last_route)>30  && mystatus!=4)
 						{
@@ -461,10 +465,17 @@ function update_data()
 					document.getElementById("price_txt").innerHTML=tanxa +" ლარი";
 					call_dest_lat=parseFloat(b[6]);
 					call_dest_long=parseFloat(b[7]);
+
+					call_dest_lat1=parseFloat(b[10]);
+					call_dest_long1=parseFloat(b[11]);
+					call_dest_addr1=b[12];
 				//	call_dest_addr=b[8];
-					
+
+
+
+					console.log(call_dest_lat1+" <- -> "+call_dest_long1);
 					ertxelmainc=1;
-					if (call_dest_lat>30 && (this_time-last_route)>30 && (myself==0 || mystatus!=5))
+					if (call_dest_lat>30 && (this_time-last_route)>30 &&  mystatus!=5)
 						{
 						var startpos = {lat: MyLat, lng: MyLong};
 						var endpos = {lat: call_dest_lat, lng: call_dest_long};
