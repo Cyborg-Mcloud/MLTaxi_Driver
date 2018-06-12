@@ -205,7 +205,7 @@ function calcRoute(from_loc, to_loc, directionsService, directionsDisplay, third
     var end = to_loc;
 	last_route=Date.now()
 
-	if (thir_lata>0)
+	if (third_lata>0)
 		{
 		var waypts = [];
 		 waypts.push({
