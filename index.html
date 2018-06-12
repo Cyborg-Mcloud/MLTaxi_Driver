@@ -355,7 +355,7 @@ function update_data()
 					call_dest_addr1=b[12];
 
 					ertxelmainc=1;
-					if (calllat>30 && (this_time-last_route)>10 && (myself==0 || mystatus!=1))
+					if (calllat>30 && (this_time-last_route)>10 && mystatus!=1)
 						{
 						var startpos = {lat: MyLat, lng: MyLong};
 						var endpos = {lat: calllat, lng: calllong};
@@ -394,9 +394,9 @@ function update_data()
 					call_dest_lat1=parseFloat(b[10]);
 					call_dest_long1=parseFloat(b[11]);
 					call_dest_addr1=b[12];
-					
+					console.log(call_dest_lat1+" <- -> "+call_dest_long1);
 					ertxelmainc=1;
-					if (call_dest_lat>30 && (this_time-last_route)>10  && (myself==0 || mystatus!=3))
+					if (call_dest_lat>30 && (this_time-last_route)>10  &&  mystatus!=3)
 						{
 						var startpos = {lat: MyLat, lng: MyLong};
 						var endpos = {lat: calllat, lng: calllong};
@@ -428,7 +428,7 @@ function update_data()
 					//call_dest_addr=b[8];
 					
 					ertxelmainc=1;
-					if (call_dest_lat>30 && (this_time-last_route)>30  && (myself==0 || mystatus!=4))
+					if (call_dest_lat>30 && (this_time-last_route)>30  && mystatus!=4)
 						{
 						var startpos = {lat: MyLat, lng: MyLong};
 						var endpos = {lat: call_dest_lat, lng: call_dest_long};
