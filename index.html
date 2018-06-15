@@ -860,8 +860,6 @@ function doOnOrientationChange()
 			<big>თავისუფალი ვარ</big>
 		</a>
 		<a class="bg-danger text-white py-3 text-center" href='Javascript: call_confirm();' id='call_confirm' style='display:none;' >გამოძახების მიღება</a>
-
-
 		<a class="bg-danger text-white py-3 text-center" href='Javascript: iArrived();' id='arrived_but'  style='display:none;' >მოვედი</a>
 		<a class="bg-danger text-white py-3 text-center" href='Javascript: user_met();' id='chavisvi_but' style=' display:none;'>ჩავისვი</a> 
 	</div>
@@ -1112,7 +1110,7 @@ function set_status(newstat)
 		document.getElementById("qucha_txt").innerHTML='<ul class="decor m-0 pl-3"><li class="red" >'+txt_addr+", "+call_tel+'</li><li class="red" >მიმართულება: '+ call_dest_addr+'</li><li class="red" >მიმართულება: '+ call_dest_addr1+'</li></ul>';
 		
 
-		console.log("1: "+txt_addr+"<BR>მიმართულება:"+call_dest_addr+"<BR>"+call_tel);
+		console.log("texti 1: "+txt_addr+"<BR>მიმართულება:"+call_dest_addr+"<BR>"+call_tel);
 		myaudio.play();
 		mystatus=0;
 		// shemosulia axali shekveta, irekeba zari
@@ -1132,7 +1130,7 @@ function set_status(newstat)
 		document.getElementById("chavisvi_but").style.display="none";
 		document.getElementById("user_pay_screen").style.display="none";
 		document.getElementById("qucha_txt").innerHTML='<ul class="decor m-0 pl-3"><li class="red" >'+txt_addr+", "+call_tel+'</li><li class="red" >მიმართულება: '+ call_dest_addr+'</li><li class="red" >მიმართულება: '+ call_dest_addr1+'</li></ul>';
-				console.log("2: "+txt_addr+"<BR>მიმართულება:"+call_dest_addr+"<BR>"+call_tel);
+				console.log("texti 2: "+txt_addr+"<BR>მიმართულება:"+call_dest_addr+"<BR>"+call_tel);
 		mystatus=1;
 		// shekveta migebulia
 		}
