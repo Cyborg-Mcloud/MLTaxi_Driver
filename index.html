@@ -297,7 +297,7 @@ function update_data()
 				a=mr.split("|");
 				if (a[0]=="newcall")
 					{
-					document.getElementById("client_center").style.display="inline";
+//					document.getElementById("client_center").style.display="inline";
 					b=a[1].split(";");
 					curid=b[0];
 					if (callid!=curid && myself==0)
@@ -340,7 +340,7 @@ function update_data()
 				else if (a[0]=="yourcall")
 					{
 					callconfirming=0;
-					document.getElementById("client_center").style.display="inline";
+//					document.getElementById("client_center").style.display="inline";
 					b=a[1].split(";");
 					curid=b[0];
 					callid=curid;
@@ -379,7 +379,7 @@ console.log(call_dest_lat1+" <- -> "+call_dest_long1);
 				else if (a[0]=="waiting")
 					{
 					callconfirming=0;
-					document.getElementById("client_center").style.display="inline";
+//					document.getElementById("client_center").style.display="inline";
 					b=a[1].split(";");
 					curid=b[0];
 					if (callid!=curid && myself==0)
@@ -415,7 +415,7 @@ console.log(call_dest_lat1+" <- -> "+call_dest_long1);
 				else if (a[0]=="usercoming")
 					{
 					callconfirming=0;
-					document.getElementById("client_center").style.display="inline";
+//					document.getElementById("client_center").style.display="inline";
 					b=a[1].split(";");
 					curid=b[0];
 					if (callid!=curid && myself==0)
@@ -451,7 +451,7 @@ console.log(call_dest_lat1+" <- -> "+call_dest_long1);
 				else if (a[0]=="moving")
 					{
 					callconfirming=0;
-					document.getElementById("client_center").style.display="none";
+//					document.getElementById("client_center").style.display="none";
 
 					b=a[1].split(";");
 					curid=b[0];
@@ -496,7 +496,7 @@ console.log(call_dest_lat1+" <- -> "+call_dest_long1);
 				else
 					{
 					callconfirming=0;
-					document.getElementById("client_center").style.display="none";
+//					document.getElementById("client_center").style.display="none";
 					if (curdisp!=0)	{set_status(0);}
 					txt_addr="";
 					calllong=0;
@@ -999,7 +999,7 @@ function userpay(pmethod)
 		console.log("usermet upload: "+url);
 		gamehttp.open('GET',url,true);
 		gamehttp.send(null);
-		document.getElementById("client_center").style.display="none";
+//		document.getElementById("client_center").style.display="none";
 		callid=0;
 		mystatus=0;
 		calllat=0;
@@ -1225,7 +1225,9 @@ function set_client()
 	console.log("setme");
 
 	if(myself!=2)
-		{myself=2; document.getElementById("client_but").src='client_center.png';document.getElementById("cbut").src='center.svg';}
+		{myself=2; 
+		//document.getElementById("client_but").src='client_center.png';
+		document.getElementById("cbut").src='center.svg';}
 	else {myself=0;document.getElementById("client_but").src='client_icon.png';}
 
 	}
