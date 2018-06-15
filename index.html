@@ -439,7 +439,7 @@ function update_data()
 					call_dest_addr1=b[12];
 					//call_dest_addr=b[8];
 					console.log(call_dest_lat1+" <- -> "+call_dest_long1);
-										console.log("mesame misamarti: "+call_dest_addr1);
+					console.log("mesame misamarti: "+call_dest_addr1);
 					ertxelmainc=1;
 					if (call_dest_lat>30 && (this_time-last_route)>30  && mystatus!=4)
 						{
@@ -1114,7 +1114,7 @@ function set_status(newstat)
 		document.getElementById("qucha_txt").innerHTML='<ul class="decor m-0 pl-3"><li class="red" >'+txt_addr+", "+call_tel+'</li><li class="red" >მიმართულება: '+ call_dest_addr+'</li><li class="red" >მიმართულება: '+ call_dest_addr1+'</li></ul>';
 		
 
-		console.log("texti 1: "+txt_addr+"<BR>მიმართულება:"+call_dest_addr+"<BR>"+call_tel);
+		console.log("texti 1: "+txt_addr+"<BR>მიმართულება:"+call_dest_addr+"<BR>"+call_tel+ "<BR>"+call_dest_addr1);
 		myaudio.play();
 		mystatus=0;
 		// shemosulia axali shekveta, irekeba zari
@@ -1134,7 +1134,7 @@ function set_status(newstat)
 		document.getElementById("chavisvi_but").style.display="none";
 		document.getElementById("user_pay_screen").style.display="none";
 		document.getElementById("qucha_txt").innerHTML='<ul class="decor m-0 pl-3"><li class="red" >'+txt_addr+", "+call_tel+'</li><li class="red" >მიმართულება: '+ call_dest_addr+'</li><li class="red" >მიმართულება: '+ call_dest_addr1+'</li></ul>';
-				console.log("texti 2: "+txt_addr+"<BR>მიმართულება:"+call_dest_addr+"<BR>"+call_tel);
+				console.log("texti 2: "+txt_addr+"<BR>მიმართულება:"+call_dest_addr+"<BR>"+call_tel+ "<BR>"+call_dest_addr1);
 		mystatus=1;
 		// shekveta migebulia
 		}
@@ -1153,7 +1153,7 @@ function set_status(newstat)
 		document.getElementById("chavisvi_but").style.display="none";
 		document.getElementById("user_pay_screen").style.display="none";
 		document.getElementById("qucha_txt").innerHTML='<ul class="decor m-0 pl-3"><li class="red" >'+txt_addr+", "+call_tel+'</li><li class="red" >მიმართულება: '+ call_dest_addr+'</li><li class="red" >მიმართულება: '+ call_dest_addr1+'</li></ul>';
-				console.log("texti 3: "+txt_addr+"<BR>მიმართულება:"+call_dest_addr+"<BR>"+call_tel);
+				console.log("texti 3: "+txt_addr+"<BR>მიმართულება:"+call_dest_addr+"<BR>"+call_tel+ "<BR>"+call_dest_addr1);
 		mystatus=3;
 		}
 	else if (newstat==4 && curdisp!=4)
@@ -1171,7 +1171,7 @@ function set_status(newstat)
 		document.getElementById("chavisvi_but").style.display="block";
 		document.getElementById("user_pay_screen").style.display="none";
 		document.getElementById("qucha_txt").innerHTML='<ul class="decor m-0 pl-3"><li class="red" >'+txt_addr+", "+call_tel+'</li><li class="red" >მიმართულება: '+ call_dest_addr+'</li><li class="red" >მიმართულება: '+ call_dest_addr1+'</li></ul>';
-				console.log("4: "+txt_addr+"<BR>მიმართულება:"+call_dest_addr+"<BR>"+call_tel);
+				console.log("4: "+txt_addr+"<BR>მიმართულება:"+call_dest_addr+"<BR>"+call_tel+ "<BR>"+call_dest_addr1);
 		mystatus=4;
 		}
 	else if (newstat==5 && curdisp!=5)
