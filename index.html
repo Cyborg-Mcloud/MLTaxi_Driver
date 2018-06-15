@@ -813,9 +813,9 @@ function doOnOrientationChange()
 	
 
 			
-<a href='Javascript: setme();' style='position:fixed; bottom:110px; left:5px; margin:5px; z-index:252; ' ><img id='cbut' src='center.svg' style='width:50px; height:50px;'></a>
+<a href='Javascript: setme();' style='position:fixed; top:150px; left:5px; margin:5px; z-index:252; ' ><img id='cbut' src='center.svg' style='width:50px; height:50px;'></a>
 
-<a href='Javascript: set_client();' style='position:fixed; bottom:50px; left:5px; margin:5px; z-index:252; '  id='client_center' style='display:none;'><img id='client_but' src='client_icon.png'></a> <!--visibility:hidden-->
+<!--<a href='Javascript: set_client();' style='position:fixed; bottom:50px; left:5px; margin:5px; z-index:252; '  id='client_center' style='display:none;'><img id='client_but' src='client_icon.png'></a> <!--visibility:hidden-->
 <!--<a href='Javascript: show_settings();' style='position:fixed; top:45px; right:5px; margin:5px; z-index:252; ' ><img src='settings.png'></a> -->
 
 
@@ -891,7 +891,23 @@ function doOnOrientationChange()
 				
 			</div>-->
 
-			<div id='user_pay_screen' style='position:fixed; bottom:0px; left:0px; height:170px;background-color:white; width:100%; display:none; color:black;'>
+	<div class="footer d-table w-100" id='user_pay_screen'  style='position:fixed; bottom:0px; left:0px; background-color:white; display:block; '>
+		<a class="bg-danger text-light py-3 text-center" href='Javascript: userpay(1);' id='arrived_but' style='display:block;'>
+			მგზავრობის დასრულება
+		</a>
+		<div class="text-center py-2 mb-4" style="border-bottom: 1px solid red">
+			მანძილი: <span name='meters_txt' id='meters_txt' style=' font-size:24px; color:black;'></span>კმ | თანხა: <span style=' font-size:24px; color:black;'  name='price_txt' id='price_txt'></span> ლარი
+		</div>
+		<div class="container-fluid py-2">
+			<div class="d-flex align-items-center justify-content-between">
+				<div><img src="assets/images/taxi.svg" height="32" /></div>
+				<div class="text-center"><img src="assets/images/logo.svg" height="74" /></div>
+				<div><img src="assets/images/taxi.svg" height="32" /></div>
+			</div>
+		</div>
+	</div>
+
+		<!--	<div id='user_pay_screen' style='position:fixed; bottom:0px; left:0px; height:170px;background-color:white; width:100%; display:none; color:black;'>
 			<Br>
 
 				<table width=100%>
@@ -899,16 +915,16 @@ function doOnOrientationChange()
 				<a href='Javascript: userpay(1);' id='arrived_but' style=' border:1px solid gray; padding:5px; display:block; background-color:green; color:white; font-size:24px;'>დასრულება</a>
 				
 				<!--&nbsp; &nbsp; &nbsp;
-				<a href='Javascript: userpay(2);' id='arrived_but' style='float:right; border:1px solid gray; padding:5px; display:block; background-color:blue; color:white; width:70px; font-size:16px;'>ბარათი</a>-->
+				<a href='Javascript: userpay(2);' id='arrived_but' style='float:right; border:1px solid gray; padding:5px; display:block; background-color:blue; color:white; width:70px; font-size:16px;'>ბარათი</a>
 				</td>
 				</tr>
 				<Tr><td style=' font-size:24px;' align=center>
-				მანძილი: <span name='meters_txt' id='meters_txt' style=' font-size:24px; color:black;'></span> თანხა: <span style=' font-size:24px; color:black;'  name='price_txt' id='price_txt'></span> <!--<input type='number' id='mytanxa' size=4 style=' font-size:16px;'>-->
+				მანძილი: <span name='meters_txt' id='meters_txt' style=' font-size:24px; color:black;'></span> თანხა: <span style=' font-size:24px; color:black;'  name='price_txt' id='price_txt'></span> <!--<input type='number' id='mytanxa' size=4 style=' font-size:16px;'>
 				</td></tr>
 </table>
 				
 
-			</div>
+			</div>-->
 
 		</div>
 
@@ -1065,9 +1081,9 @@ function set_status(newstat)
 		{
 		if (ertxelmainc==1)
 			{	
-			document.getElementById("bottom_menu").style.height='90px';
-			document.getElementById("bottom_menu").style.opacity = "0.9";
-			document.getElementById("bottom_menu").style.filter  = 'alpha(opacity=90)';
+//			document.getElementById("bottom_menu").style.height='90px';
+//			document.getElementById("bottom_menu").style.opacity = "0.9";
+//			document.getElementById("bottom_menu").style.filter  = 'alpha(opacity=90)';
 			
 			document.getElementById("stat_but").style.display="block";
 			document.getElementById("call_confirm").style.display="none";
@@ -1084,9 +1100,9 @@ function set_status(newstat)
 	else if (newstat==101 && curdisp!=101)
 		{
 		curdisp=101;
-		document.getElementById("bottom_menu").style.height='100%';
-		document.getElementById("bottom_menu").style.opacity = "0.4";
-			document.getElementById("bottom_menu").style.filter  = 'alpha(opacity=40)';
+//		document.getElementById("bottom_menu").style.height='100%';
+//		document.getElementById("bottom_menu").style.opacity = "0.4";
+//			document.getElementById("bottom_menu").style.filter  = 'alpha(opacity=40)';
 			
 		document.getElementById("stat_but").style.display="none";
 		document.getElementById("call_confirm").style.display="block";
@@ -1103,9 +1119,9 @@ function set_status(newstat)
 		}
 	else if (newstat==1 && curdisp!=1)
 		{
-		document.getElementById("bottom_menu").style.height='180px';
-		document.getElementById("bottom_menu").style.opacity = "0.9";
-		document.getElementById("bottom_menu").style.filter  = 'alpha(opacity=90)';
+//		document.getElementById("bottom_menu").style.height='180px';
+//		document.getElementById("bottom_menu").style.opacity = "0.9";
+//		document.getElementById("bottom_menu").style.filter  = 'alpha(opacity=90)';
 			
 		myaudio.pause();
 		myaudio.currentTime = 0;
@@ -1125,9 +1141,9 @@ function set_status(newstat)
 		myaudio.pause();
 		myaudio.currentTime = 0;
 		curdisp=3;
-		document.getElementById("bottom_menu").style.height='180px';
-		document.getElementById("bottom_menu").style.opacity = "0.9";
-		document.getElementById("bottom_menu").style.filter  = 'alpha(opacity=90)';
+//		document.getElementById("bottom_menu").style.height='180px';
+//		document.getElementById("bottom_menu").style.opacity = "0.9";
+//		document.getElementById("bottom_menu").style.filter  = 'alpha(opacity=90)';
 			
 		document.getElementById("stat_but").style.display="none";
 		document.getElementById("call_confirm").style.display="none";
@@ -1143,9 +1159,9 @@ function set_status(newstat)
 		myaudio.pause();
 		myaudio.currentTime = 0;
 		curdisp=4;
-		document.getElementById("bottom_menu").style.height='180px';
-		document.getElementById("bottom_menu").style.opacity = "0.9";
-		document.getElementById("bottom_menu").style.filter  = 'alpha(opacity=90)';
+//		document.getElementById("bottom_menu").style.height='180px';
+//		document.getElementById("bottom_menu").style.opacity = "0.9";
+//		document.getElementById("bottom_menu").style.filter  = 'alpha(opacity=90)';
 			
 		document.getElementById("stat_but").style.display="none";
 		document.getElementById("call_confirm").style.display="none";
@@ -1161,9 +1177,9 @@ function set_status(newstat)
 		myaudio.pause();
 		myaudio.currentTime = 0;
 		curdisp=5;
-		document.getElementById("bottom_menu").style.height='180px';
-		document.getElementById("bottom_menu").style.opacity = "0.9";
-		document.getElementById("bottom_menu").style.filter  = 'alpha(opacity=90)';
+//		document.getElementById("bottom_menu").style.height='180px';
+//		document.getElementById("bottom_menu").style.opacity = "0.9";
+//		document.getElementById("bottom_menu").style.filter  = 'alpha(opacity=90)';
 			
 		document.getElementById("stat_but").style.display="none";
 		document.getElementById("call_confirm").style.display="none";
