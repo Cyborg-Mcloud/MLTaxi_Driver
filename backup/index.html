@@ -833,27 +833,16 @@ function doOnOrientationChange()
     <Center>ჩართეთ ინტერნეტ კავშირი</center>
   </div>
 
-<div id="bottom_menu" class="d-table w-100" style='position:fixed; top:0px; left:0px; height:120px; z-index:251; width:100%; text-align:left; display:block;'>
-
-
-		<div id='qucha_txt'>
-			<ul class="decor m-0 pl-3">
-				<li class="red" id='qucha1'>მიმართულება: 26 აბაშიძიეს ქუჩა, 577 700 043</li>
-				<li class="red" id='qucha2'>მიმართულება: 26 აბაშიძიეს ქუჩა, 577 700 043</li>
-			</ul>
-		</div>
+<div id="bottom_menu" style='width:100%; position:fixed; top:0px; padding-top:10px; left:0px; height:120px; padding-left:20px; z-index:251; background-color:#3f3f3f; filter: alpha(opacity=90);	-moz-opacity: 0.5; -khtml-opacity: 0.5;  opacity: 0.5; width:100%; text-align:left;'>
+	<Br>
+	<div style=' text-align:left; font-size:26px; font-weight:Bold; ' id='qucha_txt'></div>
 
 
 	<div class="header d-table-row" id="no_call_screen">
-		<div class="container-fluid py-2" style='background-color:white;'>
+		<div class="container-fluid py-2">
 			<div class="d-flex align-items-center">
-				<div id='qucha_txt'>
-					<ul class="decor m-0 pl-3">
-						<li class="red" >მიმართულება: 26 აბაშიძიეს ქუჩა, 577 700 043</li>
-						<li class="red" >მიმართულება: 26 აბაშიძიეს ქუჩა, 577 700 043</li>
-					</ul>
+				<div>
 				</div>
-
 				<div class="ml-auto pl-3">
 					<a href='Javascript: show_settings();'><i class="icon-gear text-danger im-1x"></i></a>
 				</div>
@@ -1090,9 +1079,7 @@ function set_status(newstat)
 		document.getElementById("my_call_screen").style.display="none";
 		document.getElementById("user_wait_screen").style.display="none";
 		document.getElementById("user_pay_screen").style.display="none";
-		document.getElementById("qucha_txt").innerHTML='<ul class="decor m-0 pl-3"><li class="red" >'+txt_addr+", "+call_tel+'</li><li class="red" >მიმართულება: '+ call_dest_addr+'</li><li class="red" >მიმართულება: '+ call_dest_addr1+'</li></ul>';
-		
-
+		document.getElementById("qucha_txt").innerHTML=txt_addr+"<BR>მიმართულება: "+call_dest_addr+"<BR>"+call_tel;
 		console.log("1: "+txt_addr+"<BR>მიმართულება:"+call_dest_addr+"<BR>"+call_tel);
 		myaudio.play();
 		mystatus=0;
@@ -1112,7 +1099,7 @@ function set_status(newstat)
 		document.getElementById("my_call_screen").style.display="inline";
 		document.getElementById("user_wait_screen").style.display="none";
 		document.getElementById("user_pay_screen").style.display="none";
-		document.getElementById("qucha_txt").innerHTML='<ul class="decor m-0 pl-3"><li class="red" >'+txt_addr+", "+call_tel+'</li><li class="red" >მიმართულება: '+ call_dest_addr+'</li><li class="red" >მიმართულება: '+ call_dest_addr1+'</li></ul>';
+		document.getElementById("qucha_txt").innerHTML=txt_addr+"<BR>მიმართულება: "+call_dest_addr+"<BR>"+call_tel;
 				console.log("2: "+txt_addr+"<BR>მიმართულება:"+call_dest_addr+"<BR>"+call_tel);
 		mystatus=1;
 		// shekveta migebulia
@@ -1131,7 +1118,7 @@ function set_status(newstat)
 		document.getElementById("my_call_screen").style.display="none";
 		document.getElementById("user_wait_screen").style.display="none";
 		document.getElementById("user_pay_screen").style.display="none";
-		document.getElementById("qucha_txt").innerHTML='<ul class="decor m-0 pl-3"><li class="red" >'+txt_addr+", "+call_tel+'</li><li class="red" >მიმართულება: '+ call_dest_addr+'</li><li class="red" >მიმართულება: '+ call_dest_addr1+'</li></ul>';
+		document.getElementById("qucha_txt").innerHTML=txt_addr+"<BR>მიმართულება: "+call_dest_addr+"<BR>"+call_tel;
 				console.log("3: "+txt_addr+"<BR>მიმართულება:"+call_dest_addr+"<BR>"+call_tel);
 		mystatus=3;
 		}
@@ -1149,7 +1136,7 @@ function set_status(newstat)
 		document.getElementById("my_call_screen").style.display="none";
 		document.getElementById("user_wait_screen").style.display="inline";
 		document.getElementById("user_pay_screen").style.display="none";
-		document.getElementById("qucha_txt").innerHTML='<ul class="decor m-0 pl-3"><li class="red" >'+txt_addr+", "+call_tel+'</li><li class="red" >მიმართულება: '+ call_dest_addr+'</li><li class="red" >მიმართულება: '+ call_dest_addr1+'</li></ul>';
+		document.getElementById("qucha_txt").innerHTML=txt_addr+"<BR>მიმართულება: "+call_dest_addr+"<BR>"+call_tel;
 				console.log("4: "+txt_addr+"<BR>მიმართულება:"+call_dest_addr+"<BR>"+call_tel);
 		mystatus=4;
 		}
@@ -1167,7 +1154,7 @@ function set_status(newstat)
 		document.getElementById("my_call_screen").style.display="none";
 		document.getElementById("user_wait_screen").style.display="none";
 		document.getElementById("user_pay_screen").style.display="inline";
-		document.getElementById("qucha_txt").innerHTML='<ul class="decor m-0 pl-3"><li class="red" >'+txt_addr+", "+call_tel+'</li><li class="red" >მიმართულება: '+ call_dest_addr+'</li><li class="red" >მიმართულება: '+ call_dest_addr1+'</li></ul>';
+		document.getElementById("qucha_txt").innerHTML=txt_addr+"<BR>მიმართულება: "+call_dest_addr;
 				console.log("5: "+txt_addr+"<BR>მიმართულება:"+call_dest_addr+"<BR>"+call_tel);
 
 		mystatus=5;
