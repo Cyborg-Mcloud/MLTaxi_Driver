@@ -160,7 +160,7 @@ function onDeviceReady()
 	req_loc_auth();
 
 	document.addEventListener("pause", onPause, false);
-	//document.addEventListener("backbutton", onBackKeyDown, false);
+	document.addEventListener("backbutton", onBackKeyDown, false);
 	//document.addEventListener("menubutton", onMenuDown, false);
 	//document.addEventListener("searchbutton", onSearchDown, false);
 //	document.addEventListener("volumedownbutton", onVolumeDown, false);
@@ -908,8 +908,7 @@ function doOnOrientationChange()
 	<option value='9'>Watercolor Map (very slow)</option>
 	<option value='10'>Toner MAP (slow)</option>
 	</select>
-		<Br><Br>
-		<a href='Javascript: show_map();' style='color:blue;'>Back</a>
+		
 <br>
 ეკრანის ორიენტაცია: <a href='Javascript: setori(1);'>ვერტიკალური</a> / <a href='Javascript: setori(2);'>ჰორიზონტალური</a>
 	<br><br>
@@ -920,7 +919,10 @@ function doOnOrientationChange()
 			<tr><td>Pass:</td><td> <input type='password' id='mypass' name='mypass' value='yourpass' size=6></td>
 			<td rowspan=2><a style='' href='Javascript: saveuser();'><img src='save.png'></a></td></tr>
 		</table>
+<Br><Br>
+		<a href='Javascript: show_map();' style='color:black; padding:10px border:1px solid gray; background-color:white;'>უკან დაბრუნება</a>
 		<br><br>
+
 		<input type='checkbox' id='ignor_cache' name='ignor_cache' onchange='cignore();'> Ignore Cache<br>
 		<input type='checkbox' id='ignor_cache_on_wifi' name='ignor_cache_on_wifi' onchange='cignorewifi();' checked> Ignore Cache on WiFi<br>
 	</div>
