@@ -889,25 +889,13 @@ function doOnOrientationChange()
 
 
 
-	<div id='settings_sheet' style='visibility:hidden; position:absolute; left:0px; top:0px; padding:10px; z-index:10000000;'>
+	<div id='settings_sheet' style='visibility:hidden; position:fixed; left:10px; top:120px; padding:10px; z-index:10000000;width:80%; background-color:white; color:black;'>
 		<br>
 		<div id='mydiv'></div>
 		<br>
 		<p id="geopos">Finding geolocation...</p>
 
-	<b>Map Type</b><br>
-	<select id='maptype' onChange='changemap();'>
-	<option value='1' >Open Street Map (fast)</option>
-	<option value='2'>Open Cycle Map (slow)</option>
-	<option value='3' selected>Google Sattelite (fast)</option>
-	<option value='4'>Google Hybrid (fast)</option>
-	<option value='5'>Google Terrain (fast)</option>
-	<option value='6'>Google BLACK Strange 1 (very fast)</option>
-	<option value='7'>Google BLACK Strange 2 (fast)</option>
-	<option value='8'>Wiki MAP (slow)</option>
-	<option value='9'>Watercolor Map (very slow)</option>
-	<option value='10'>Toner MAP (slow)</option>
-	</select>
+	
 		
 <br>
 ეკრანის ორიენტაცია: <a href='Javascript: setori(1);'>ვერტიკალური</a> / <a href='Javascript: setori(2);'>ჰორიზონტალური</a>
@@ -920,11 +908,11 @@ function doOnOrientationChange()
 			<td rowspan=2><a style='' href='Javascript: saveuser();'><img src='save.png'></a></td></tr>
 		</table>
 <Br><Br>
-		<a href='Javascript: show_map();' style='color:black; padding:10px border:1px solid gray; background-color:white;'>უკან დაბრუნება</a>
+		<a href='Javascript: show_map();' style='color:black; display:block; padding:10px border:1px solid gray; background-color:white;'>უკან დაბრუნება</a>
 		<br><br>
 
-		<input type='checkbox' id='ignor_cache' name='ignor_cache' onchange='cignore();'> Ignore Cache<br>
-		<input type='checkbox' id='ignor_cache_on_wifi' name='ignor_cache_on_wifi' onchange='cignorewifi();' checked> Ignore Cache on WiFi<br>
+		<!--<input type='checkbox' id='ignor_cache' name='ignor_cache' onchange='cignore();'> Ignore Cache<br>
+		<input type='checkbox' id='ignor_cache_on_wifi' name='ignor_cache_on_wifi' onchange='cignorewifi();' checked> Ignore Cache on WiFi<br>-->
 	</div>
 <script>
 
@@ -1191,13 +1179,13 @@ function set_client()
 
 	}
 
-document.getElementById("maptype").value=1;
+
 var curmap=1;
 
 function changemap()
 	{
 		console.log("change map");
-	curmap=document.getElementById("maptype").value;
+
 	oxt=0;oyt=0;
 	setmypos();
 	}
@@ -1210,7 +1198,7 @@ function show_settings()
 	checkConnection();
 
 	curwindow=1;
-	document.getElementById("fanjara").style.visibility="hidden";
+	//document.getElementById("fanjara").style.visibility="hidden";
 	document.getElementById("settings_sheet").style.visibility="visible";
 	}
 
@@ -1218,7 +1206,7 @@ function show_settings()
 function show_map()
 	{
 	curwindow=0;
-	document.getElementById("fanjara").style.visibility="visible";
+	//document.getElementById("fanjara").style.visibility="visible";
 	document.getElementById("settings_sheet").style.visibility="hidden";
 	}
 
