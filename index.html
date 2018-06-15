@@ -891,7 +891,7 @@ function doOnOrientationChange()
 				
 			</div>-->
 
-	<div class="footer d-table w-100" id='user_pay_screen'  style='position:fixed; bottom:0px; left:0px; background-color:white; display:block; '>
+	<div class="footer d-table w-100" id='user_pay_screen'  style='position:fixed; bottom:0px; left:0px; background-color:white; display:none; '>
 		<a class="bg-danger text-light py-3 text-center" href='Javascript: userpay(1);' id='arrived_but' style='display:block;'>
 			მგზავრობის დასრულება
 		</a>
@@ -1185,7 +1185,7 @@ function set_status(newstat)
 		document.getElementById("call_confirm").style.display="none";
 		document.getElementById("arrived_but").style.display="none";
 		document.getElementById("chavisvi_but").style.display="none";
-		document.getElementById("user_pay_screen").style.display="inline";
+		document.getElementById("user_pay_screen").style.display="block";
 		document.getElementById("qucha_txt").innerHTML='<ul class="decor m-0 pl-3"><li class="red" >'+txt_addr+", "+call_tel+'</li><li class="red" >მიმართულება: '+ call_dest_addr+'</li><li class="red" >მიმართულება: '+ call_dest_addr1+'</li></ul>';
 				console.log("5: "+txt_addr+"<BR>მიმართულება:"+call_dest_addr+"<BR>"+call_tel);
 
