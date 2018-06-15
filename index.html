@@ -9,6 +9,12 @@
   	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>MLTaxi Driver</title>
 
+	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css" />
+	<link rel="stylesheet" href="assets/icomoon/icomoon.css" />
+	<link rel="stylesheet" href="assets/css/style.css" />
+
+	<script type="text/javascript" src="assets/jquery/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 
 	<script type="text/javascript" charset="utf-8" src="io.js"></script>
@@ -889,28 +895,28 @@ function doOnOrientationChange()
 
 
 
-	<div id='settings_sheet' style='visibility:hidden; position:fixed; left:10px; top:120px; padding:10px; z-index:10000000;width:80%; background-color:white; color:black;'>
-		<br>
+	<div id='settings_sheet' style='visibility:hidden; position:fixed; left:10%; top:120px; padding:10px; z-index:10000000;width:80%; background-color:white; color:black;'>
+		<center>
 		<div id='mydiv'></div>
 		<br>
 		<p id="geopos">Finding geolocation...</p>
 
 	
-		
-<br>
-ეკრანის ორიენტაცია: <a href='Javascript: setori(1);'>ვერტიკალური</a> / <a href='Javascript: setori(2);'>ჰორიზონტალური</a>
-	<br><br>
-		<div id='erorebi'>Tilebi (zoom:16)</div>
-		<b>Profile Details</b>
-		<table>
-			<tr><td>User:</td><td> <input type='text' id='myname' name='myname' value='youuser' size=12></td></tr>
-			<tr><td>Pass:</td><td> <input type='password' id='mypass' name='mypass' value='yourpass' size=6></td>
-			<td rowspan=2><a style='' href='Javascript: saveuser();'><img src='save.png'></a></td></tr>
-		</table>
-<Br><Br>
+					
+			<br>
+			ეკრანის ორიენტაცია: <a href='Javascript: setori(1);'>ვერტიკალური</a> / <a href='Javascript: setori(2);'>ჰორიზონტალური</a>
+				<br><br>
+					<div id='erorebi'>Tilebi (zoom:16)</div>
+					<b>Profile Details</b>
+					<table>
+						<tr><td>User:</td><td> <input type='text' id='myname' name='myname' value='youuser' size=12></td></tr>
+						<tr><td>Pass:</td><td> <input type='password' id='mypass' name='mypass' value='yourpass' size=6></td>
+						<td rowspan=2><a style='' href='Javascript: saveuser();'><img src='save.png'></a></td></tr>
+					</table>
+			<Br><Br>
 		<a href='Javascript: show_map();' style='color:black; display:block; padding:10px border:1px solid gray; background-color:white;'>უკან დაბრუნება</a>
 		<br><br>
-
+		</center>
 		<!--<input type='checkbox' id='ignor_cache' name='ignor_cache' onchange='cignore();'> Ignore Cache<br>
 		<input type='checkbox' id='ignor_cache_on_wifi' name='ignor_cache_on_wifi' onchange='cignorewifi();' checked> Ignore Cache on WiFi<br>-->
 	</div>
