@@ -359,7 +359,8 @@ function update_data()
 					call_dest_lat1=parseFloat(b[10]);
 					call_dest_long1=parseFloat(b[11]);
 					call_dest_addr1=b[12];
-console.log(call_dest_lat1+" <- -> "+call_dest_long1);
+					console.log(call_dest_lat1+" <- -> "+call_dest_long1);
+					console.log("mesame misamarti: "+call_dest_addr1);
 					ertxelmainc=1;
 					if (calllat>30 && (this_time-last_route)>10 && mystatus!=1)
 						{
@@ -401,6 +402,7 @@ console.log(call_dest_lat1+" <- -> "+call_dest_long1);
 					call_dest_long1=parseFloat(b[11]);
 					call_dest_addr1=b[12];
 					console.log(call_dest_lat1+" <- -> "+call_dest_long1);
+										console.log("mesame misamarti: "+call_dest_addr1);
 					ertxelmainc=1;
 					if (call_dest_lat>30 && (this_time-last_route)>10  &&  mystatus!=3)
 						{
@@ -437,6 +439,7 @@ console.log(call_dest_lat1+" <- -> "+call_dest_long1);
 					call_dest_addr1=b[12];
 					//call_dest_addr=b[8];
 					console.log(call_dest_lat1+" <- -> "+call_dest_long1);
+										console.log("mesame misamarti: "+call_dest_addr1);
 					ertxelmainc=1;
 					if (call_dest_lat>30 && (this_time-last_route)>30  && mystatus!=4)
 						{
@@ -480,6 +483,7 @@ console.log(call_dest_lat1+" <- -> "+call_dest_long1);
 
 
 					console.log(call_dest_lat1+" <- -> "+call_dest_long1);
+										console.log("mesame misamarti: "+call_dest_addr1);
 					ertxelmainc=1;
 					if (call_dest_lat>30 && (this_time-last_route)>30 &&  mystatus!=5)
 						{
@@ -847,7 +851,7 @@ function doOnOrientationChange()
 	<div class="header d-table-row" id="no_call_screen">
 		<div class="container-fluid py-2" style='background-color:white;'>
 			<div class="d-flex align-items-center">
-				<div id='qucha_txt' >
+				<div id='qucha_txt' style='color:black;'>
 					
 				</div>
 
