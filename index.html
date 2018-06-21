@@ -1111,7 +1111,7 @@ function set_status(newstat)
 		document.getElementById("arrived_but").style.display="none";
 		document.getElementById("chavisvi_but").style.display="none";
 		document.getElementById("user_pay_screen").style.display="none";
-		document.getElementById("qucha_txt").innerHTML='<ul class="decor m-0 pl-3"><li class="red" >'+txt_addr+", "+call_tel+'</li><li class="red" >მიმართულება: '+ call_dest_addr+'</li><li class="red" >მიმართულება: '+ call_dest_addr1+'</li></ul>';
+		document.getElementById("qucha_txt").innerHTML='<ul class="decor m-0 pl-3"><li class="red" >'+txt_addr+", "+call_tel+'<a href="Javascript: make_call();"><img src="call.png" height=18px></a></li><li class="red" >მიმართულება: '+ call_dest_addr+'</li><li class="red" >მიმართულება: '+ call_dest_addr1+'</li></ul>';
 		
 
 		console.log("texti 1: "+txt_addr+"<BR>მიმართულება:"+call_dest_addr+"<BR>"+call_tel+ "<BR>"+call_dest_addr1);
@@ -1195,6 +1195,13 @@ function set_status(newstat)
 		// chavisvi, vmozraob
 		}
 		
+	}
+
+function make_call()
+	{
+	
+
+	window.plugins.CallNumber.callNumber(onCallSuccess, onCallError, call_tel, true);
 	}
 
 function cignore()
