@@ -1175,10 +1175,12 @@ function set_status(newstat)
 //			document.getElementById("bottom_menu").style.filter  = 'alpha(opacity=90)';
 			
 			document.getElementById("stat_but").style.display="block";
-			document.getElementById("call_confirm").style.display="none";
-			document.getElementById("arrived_but").style.display="none";
-			document.getElementById("chavisvi_but").style.display="none";
-			document.getElementById("user_pay_screen").style.display="none";
+
+			document.getElementById("call_confirm").style.setProperty("display", "none", "important");
+			document.getElementById("arrived_but").style.setProperty("display", "none", "important");
+			document.getElementById("chavisvi_but").style.setProperty("display", "none", "important");
+			document.getElementById("user_pay_screen").style.setProperty("display", "none", "important");
+
 			document.getElementById("qucha_txt").innerHTML="";
 			document.getElementById("usertel").innerHTML="";
 			
@@ -1198,15 +1200,16 @@ function set_status(newstat)
 //			document.getElementById("bottom_menu").style.filter  = 'alpha(opacity=40)';
 			
 		document.getElementById("stat_but").style.display="none";
-		document.getElementById("call_confirm").style.display="block";
-		document.getElementById("arrived_but").style.display="none";
-		document.getElementById("chavisvi_but").style.display="none";
-		document.getElementById("user_pay_screen").style.display="none";
+
+		document.getElementById("call_confirm").style.setProperty("display", "block", "important");
+		document.getElementById("arrived_but").style.setProperty("display", "none", "important");
+		document.getElementById("chavisvi_but").style.setProperty("display", "none", "important");
+		document.getElementById("user_pay_screen").style.setProperty("display", "none", "important");
 
 
 		document.getElementById("new_call_screen").style.setProperty("display", "block", "important");
 		document.getElementById("no_call_screen").style.setProperty("display", "none", "important");
-		document.getElementById("usertel").style.innerHTML=call_tel;
+		document.getElementById("usertel").innerHTML=call_tel;
 		document.getElementById("qucha_txt").innerHTML='<table class="table table-striped table-sm"><tr><td style="padding-left: 15px">'+txt_addr+'</td></tr><tr><td style="padding-left: 15px">'+ call_dest_addr+'</td></tr><tr><td style="padding-left: 15px">'+ call_dest_addr1+'</td></tr></table>';
 		
 		
@@ -1228,14 +1231,15 @@ function set_status(newstat)
 		myaudio.currentTime = 0;
 		curdisp=1;
 		document.getElementById("stat_but").style.display="none";
-		document.getElementById("call_confirm").style.display="none";
-		document.getElementById("arrived_but").style.display="block";
-		document.getElementById("chavisvi_but").style.display="none";
-		document.getElementById("user_pay_screen").style.display="none";
+
+		document.getElementById("call_confirm").style.setProperty("display", "none", "important");
+		document.getElementById("arrived_but").style.setProperty("display", "block", "important");
+		document.getElementById("chavisvi_but").style.setProperty("display", "none", "important");
+		document.getElementById("user_pay_screen").style.setProperty("display", "none", "important");
 		
 		document.getElementById("new_call_screen").style.setProperty("display", "block", "important");
 		document.getElementById("no_call_screen").style.setProperty("display", "none", "important");
-		document.getElementById("usertel").style.innerHTML=call_tel;
+		document.getElementById("usertel").innerHTML=call_tel;
 		document.getElementById("qucha_txt").innerHTML='<table class="table table-striped table-sm"><tr><td style="padding-left: 15px">'+txt_addr+'</td></tr><tr><td style="padding-left: 15px">'+ call_dest_addr+'</td></tr><tr><td style="padding-left: 15px">'+ call_dest_addr1+'</td></tr></table>';				
 		
 		console.log("texti 2: "+txt_addr+"<BR>მიმართულება:"+call_dest_addr+"<BR>"+call_tel+ "<BR>"+call_dest_addr1);
@@ -1252,14 +1256,15 @@ function set_status(newstat)
 //		document.getElementById("bottom_menu").style.filter  = 'alpha(opacity=90)';
 			
 		document.getElementById("stat_but").style.display="none";
-		document.getElementById("call_confirm").style.display="none";
-		document.getElementById("arrived_but").style.display="none";
-		document.getElementById("chavisvi_but").style.display="none";
-		document.getElementById("user_pay_screen").style.display="none";
+		
+		document.getElementById("call_confirm").style.setProperty("display", "none", "important");
+		document.getElementById("arrived_but").style.setProperty("display", "none", "important");
+		document.getElementById("chavisvi_but").style.setProperty("display", "none", "important");
+		document.getElementById("user_pay_screen").style.setProperty("display", "none", "important");
 
 		document.getElementById("new_call_screen").style.setProperty("display", "block", "important");
 		document.getElementById("no_call_screen").style.setProperty("display", "none", "important");
-		document.getElementById("usertel").style.innerHTML=call_tel;
+		document.getElementById("usertel").innerHTML=call_tel;
 		document.getElementById("qucha_txt").innerHTML='<table class="table table-striped table-sm"><tr><td style="padding-left: 15px">'+txt_addr+'</td></tr><tr><td style="padding-left: 15px">'+ call_dest_addr+'</td></tr><tr><td style="padding-left: 15px">'+ call_dest_addr1+'</td></tr></table>';		
 				
 		console.log("texti 3: "+txt_addr+"<BR>მიმართულება:"+call_dest_addr+"<BR>"+call_tel+ "<BR>"+call_dest_addr1);
@@ -1275,15 +1280,16 @@ function set_status(newstat)
 //		document.getElementById("bottom_menu").style.filter  = 'alpha(opacity=90)';
 			
 		document.getElementById("stat_but").style.display="none";
-		document.getElementById("call_confirm").style.display="none";
-		document.getElementById("arrived_but").style.display="none";
-		document.getElementById("chavisvi_but").style.display="block";
-		document.getElementById("user_pay_screen").style.display="none";
+		
+		document.getElementById("call_confirm").style.setProperty("display", "none", "important");
+		document.getElementById("arrived_but").style.setProperty("display", "none", "important");
+		document.getElementById("chavisvi_but").style.setProperty("display", "block", "important");
+		document.getElementById("user_pay_screen").style.setProperty("display", "none", "important");
 
 
 		document.getElementById("new_call_screen").style.setProperty("display", "block", "important");
 		document.getElementById("no_call_screen").style.setProperty("display", "none", "important");
-		document.getElementById("usertel").style.innerHTML=call_tel;
+		document.getElementById("usertel").innerHTML=call_tel;
 		document.getElementById("qucha_txt").innerHTML='<table class="table table-striped table-sm"><tr><td style="padding-left: 15px">'+txt_addr+'</td></tr><tr><td style="padding-left: 15px">'+ call_dest_addr+'</td></tr><tr><td style="padding-left: 15px">'+ call_dest_addr1+'</td></tr></table>';
 
 		console.log("4: "+txt_addr+"<BR>მიმართულება:"+call_dest_addr+"<BR>"+call_tel+ "<BR>"+call_dest_addr1);
@@ -1299,14 +1305,15 @@ function set_status(newstat)
 //		document.getElementById("bottom_menu").style.filter  = 'alpha(opacity=90)';
 			
 		document.getElementById("stat_but").style.display="none";
-		document.getElementById("call_confirm").style.display="none";
-		document.getElementById("arrived_but").style.display="none";
-		document.getElementById("chavisvi_but").style.display="none";
-		document.getElementById("user_pay_screen").style.display="block";
+
+		document.getElementById("call_confirm").style.setProperty("display", "none", "important");
+		document.getElementById("arrived_but").style.setProperty("display", "none", "important");
+		document.getElementById("chavisvi_but").style.setProperty("display", "none", "important");
+		document.getElementById("user_pay_screen").style.setProperty("display", "block", "important");
 
 		document.getElementById("new_call_screen").style.setProperty("display", "block", "important");
 		document.getElementById("no_call_screen").style.setProperty("display", "none", "important");
-		document.getElementById("usertel").style.innerHTML=call_tel;
+		document.getElementById("usertel").innerHTML=call_tel;
 		document.getElementById("qucha_txt").innerHTML='<table class="table table-striped table-sm"><tr><td style="padding-left: 15px">'+txt_addr+'</td></tr><tr><td style="padding-left: 15px">'+ call_dest_addr+'</td></tr><tr><td style="padding-left: 15px">'+ call_dest_addr1+'</td></tr></table>';
 		
 		console.log("5: "+txt_addr+"<BR>მიმართულება:"+call_dest_addr+"<BR>"+call_tel);
