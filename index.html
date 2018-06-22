@@ -1216,6 +1216,16 @@ function make_call()
 	window.plugins.CallNumber.callNumber(onCallSuccess, onCallError, call_tel, true);
 	}
 
+function onCallSuccess(result)
+	{
+	console.log("call Success:"+result);
+	}
+
+function onCallError(result) 
+	{
+	console.log("call Error:"+result);
+	}
+
 function cignore()
 	{
 	if (document.getElementById("ignor_cache").checked==true)
