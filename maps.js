@@ -235,7 +235,8 @@ function calcRoute(from_loc, to_loc, directionsService, directionsDisplay, third
 		}
 
 
-    directionsService.route(request, function (response, status) {
+    directionsService.route(request, function (response, status) 
+		{
         if (status === google.maps.DirectionsStatus.OK) {
             var route = response.routes[0].legs[0];
           //  addMarker(startMarker, mymap, getPosition(route.start_location), mymapgetBounds());
@@ -248,7 +249,7 @@ function calcRoute(from_loc, to_loc, directionsService, directionsDisplay, third
 
 			//if (myself==1)
 			//	{
-			//	mymap.panTo(positionMarker.getPosition());
+				mymap.panTo(positionMarker.getPosition());
 			//	}
 
         } else {
