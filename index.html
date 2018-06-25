@@ -335,6 +335,11 @@ function update_data()
 						var endpos = {lat: call_dest_lat, lng: call_dest_long};
 						var thirdpos = {lat: call_dest_lat1, lng: call_dest_long1};
 						myself=0;
+						console.log("calcroute: ");
+						console.log(startpos);
+						console.log(endpos);
+						console.log(thirdpos);
+
 						calcRoute(startpos, endpos, dirService, dirRender, thirdpos, call_dest_lat1);
 						
 
