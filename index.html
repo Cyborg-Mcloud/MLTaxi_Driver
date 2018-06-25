@@ -327,10 +327,12 @@ function update_data()
 					appr_price=parseInt(b[14]);
 					
 
-					set_status(101);
-					ertxelmainc=1;
-					if (last_status!=mystatus)
+				
+					console.log("last and new: " +last_status+ " / "+mystatus);
+					if (last_status!=101)
 						{
+						set_status(101);
+						ertxelmainc=1;
 						last_status=mystatus;
 						draw_markers();
 
