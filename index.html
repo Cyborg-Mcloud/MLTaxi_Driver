@@ -331,10 +331,11 @@ function update_data()
 					console.log("last and new: " +last_status+ " / "+mystatus);
 					if (last_status!=101)
 						{
-						set_status(101);
+
 						ertxelmainc=1;
+
 						last_status=mystatus;
-						draw_markers();
+
 
 						if (call_dest_lat>30 )
 							{
@@ -351,7 +352,8 @@ function update_data()
 							
 
 							}
-
+						draw_markers();
+						set_status(101);
 						}	
 				
 					}
