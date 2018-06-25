@@ -292,6 +292,10 @@ function update_data()
 				Start();
 				//alert("please REGISTER at website: www.developer.design.ge/mytaxi");
 				}
+			else if (mr=="depozit")		
+				{
+				alert("მუშაობს გასაგრძელებლად შეავსეთ დეპოზიტი");				
+				}
 			else
 				{
 				a=mr.split("|");
@@ -1103,7 +1107,7 @@ function setori(ori)
 }
 
 function userpay(pmethod)
-{
+	{
 	if (callid>0)
 		{
 		//tanxa=document.getElementById("mytanxa").value;
@@ -1132,7 +1136,7 @@ function userpay(pmethod)
 		call_dest_addr="";
 		set_status(0);
 		}
-}
+	}
 
 
 function user_met()
