@@ -1245,7 +1245,7 @@ function set_status(newstat)
 
 		document.getElementById("usertel").innerHTML=call_tel;
 		document.getElementById("qucha_txt").innerHTML='<table class="table table-striped table-sm"><tr><td style="padding-left: 15px">'+txt_addr+'</td></tr><tr><td style="padding-left: 15px">'+ call_dest_addr+'</td></tr><tr><td style="padding-left: 15px">'+ call_dest_addr1+'</td></tr></table>';
-		document.getElementById("varaudi").innerHTML="<h3><b>"+appr_price+"₾</b></h3>";		
+		document.getElementById("varaudi").innerHTML="<h3><b>"+appr_price+"-"+(appr_price+1)+"₾</b></h3>";		
 
 		console.log("texti 1: "+txt_addr+"<BR>მიმართულება:"+call_dest_addr+"<BR>"+call_tel+ "<BR>"+call_dest_addr1);
 		myaudio.play();
