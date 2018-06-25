@@ -305,6 +305,7 @@ function update_data()
 					//	setme();
 						}
 					callid=curid;
+
 					calllat=parseFloat(b[1]);
 					calllong=parseFloat(b[2]);	
 					txt_addr=b[3];
@@ -334,7 +335,7 @@ function update_data()
 
 						ertxelmainc=1;
 
-						last_status=mystatus;
+					
 
 
 						if (call_dest_lat>30 )
@@ -354,6 +355,7 @@ function update_data()
 							}
 						draw_markers();
 						set_status(101);
+							last_status=mystatus;
 						}	
 				
 					}
