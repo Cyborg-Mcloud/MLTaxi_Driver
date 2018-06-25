@@ -326,24 +326,32 @@ function update_data()
 					
 					appr_price=parseInt(b[14]);
 					
-					draw_markers();
+
 					set_status(101);
 					ertxelmainc=1;
-					if (call_dest_lat>30 && (this_time-last_route)>10)
+					if (last_status!=mystatus)
 						{
-						var startpos = {lat: calllat, lng: calllong};
-						var endpos = {lat: call_dest_lat, lng: call_dest_long};
-						var thirdpos = {lat: call_dest_lat1, lng: call_dest_long1};
-						myself=0;
-						console.log("calcroute: ");
-						console.log(startpos);
-						console.log(endpos);
-						console.log(thirdpos);
+						last_status=mystatus;
+						draw_markers();
 
-						calcRoute(startpos, endpos, dirService, dirRender, thirdpos, call_dest_lat1);
-						
+						if (call_dest_lat>30 )
+							{
+							var startpos = {lat: calllat, lng: calllong};
+							var endpos = {lat: call_dest_lat, lng: call_dest_long};
+							var thirdpos = {lat: call_dest_lat1, lng: call_dest_long1};
+							myself=0;
+							console.log("calcroute: ");
+							console.log(startpos);
+							console.log(endpos);
+							console.log(thirdpos);
 
-						}
+							calcRoute(startpos, endpos, dirService, dirRender, thirdpos, call_dest_lat1);
+							
+
+							}
+
+						}	
+				
 					}
 				else if (a[0]=="yourcall")
 					{
@@ -793,7 +801,9 @@ function draw_markers()
 	if (call_dest_lat1>0)
 		{
 		var myLatLng = {lat: call_dest_lat1, lng: call_dest_long1};
-		console.log("third marker: "+myLatLng);
+		console.log("third marker: ");
+		console.log(myLatLng);
+
 		thirdMarker.setPosition(myLatLng);
 		thirdMarker.setMap(mymap);
 		}
