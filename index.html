@@ -405,6 +405,7 @@ function update_data()
 						}
 					draw_markers();
 					set_status(1);
+					last_status=mystatus;
 					}
 				else if (a[0]=="waiting")
 					{
@@ -445,6 +446,7 @@ function update_data()
 						}
 					draw_markers();
 					set_status(3);
+					last_status=mystatus;
 					}
 				else if (a[0]=="usercoming")
 					{
@@ -486,6 +488,7 @@ function update_data()
 						}
 					draw_markers();
 					set_status(4);
+					last_status=mystatus;
 					}
 				else if (a[0]=="moving")
 					{
@@ -538,12 +541,13 @@ function update_data()
 					if (callid!=curid && myself==0) {setme();}
 					draw_markers();
 					set_status(5);
+					last_status=mystatus;
 					}
 				else
 					{
 					callconfirming=0;
 //					document.getElementById("client_center").style.display="none";
-					if (curdisp!=0)	{set_status(0);}
+					if (curdisp!=0)	{set_status(0); 					last_status=mystatus;}
 					txt_addr="";
 					calllong=0;
 					calllat=0;
@@ -554,6 +558,7 @@ function update_data()
 					call_dest_lat=0;
 					call_dest_long=0;
 					call_dest_addr="";
+
 
 					call_dest_lat1=0;
 					call_dest_long1=0;
@@ -1127,6 +1132,7 @@ function userpay(pmethod)
 //		document.getElementById("client_center").style.display="none";
 		callid=0;
 		mystatus=0;
+		last_status=0;
 		calllat=0;
 		calllong=0;
 		call_tel="";
