@@ -56,10 +56,7 @@ started=0;
 
 function onBackKeyDown() 
 	{
-	if (curwindow==1)
-		{
-		show_map();
-		}
+	show_map();
 	}
 
 function onMenuDown() 
@@ -1474,6 +1471,7 @@ function show_map()
 	curwindow=0;
 	//document.getElementById("fanjara").style.visibility="visible";
 	document.getElementById("settings_sheet").style.visibility="hidden";
+		document.getElementById("menu_sheet").style.visibility="hidden";
 	}
 
 
