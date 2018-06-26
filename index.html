@@ -1462,7 +1462,7 @@ function show_settings()
 
 	curwindow=1;
 	//document.getElementById("fanjara").style.visibility="hidden";
-	document.getElementById("settings_sheet").style.visibility="visible";
+	document.getElementById("settings_sheet").style.setProperty("display", "block", "important");
 	}
 
 
@@ -1470,8 +1470,8 @@ function show_map()
 	{
 	curwindow=0;
 	//document.getElementById("fanjara").style.visibility="visible";
-	document.getElementById("settings_sheet").style.visibility="hidden";
-		document.getElementById("menu_sheet").style.visibility="hidden";
+	document.getElementById("settings_sheet").style.setProperty("display", "none", "important");
+	document.getElementById("menu_sheet").style.setProperty("display", "none", "important");
 	}
 
 
