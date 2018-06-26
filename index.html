@@ -549,6 +549,8 @@ function update_data()
 					}
 				else
 					{
+					depoz=parseFloat(a[1]);
+						document.getElementById("mbal").innerHTML=depoz+"₾";
 					callconfirming=0;
 //					document.getElementById("client_center").style.display="none";
 					if (curdisp!=0)	{set_status(0); 					last_status=mystatus;}
