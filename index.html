@@ -176,7 +176,7 @@ function onDeviceReady()
 	var opts = { timeout: 3000, enableHighAccuracy: true, maximumAge:0};
 	watchID = navigator.geolocation.watchPosition(onSuccess, onError, opts);
 	document.addEventListener("resume", onResume, false);
-	window.addEventListener("deviceorientation", handleOrientation, true);
+//	window.addEventListener("deviceorientation", handleOrientation, true);
 
 	 navigator.compass.getCurrentHeading(onCompassSuccess, function (compassError) { console.log('Compass error: ' + compassError.code); })
 	var moptions = { frequency: 1000 };
@@ -286,7 +286,7 @@ function update_data()
 				//alert("Please Register Your User at\n\r http://taxiprius.com.ge/");
 			//	started=0;
 			//	document.getElementById('mainb').innerHTML="START";
-				if (curwindow!=1)
+				if (curwindow==1)
 					{
 					show_settings();
 					}
