@@ -1061,7 +1061,7 @@ function doOnOrientationChange()
 	</div>
 
 
-	<div id='settings_sheet' style='position:fixed; left:0; top:120px; padding:0px; z-index:10000000;width:100%; height:100%; background-color:white; color:black; display:none;'>
+	<div id='settings_sheet' style='position:fixed; left:0; top:0px; padding:0px; z-index:10000000;width:100%; height:100%; background-color:white; color:black; display:none;'>
 		<center>
 		<div id='mydiv' style='display:none;'></div>
 		<br>
@@ -1070,15 +1070,15 @@ function doOnOrientationChange()
 	
 					
 			<br>
-			<div>
+			<div style='display:none;'>
 			ეკრანის ორიენტაცია: <a href='Javascript: setori(1);'>ვერტიკალური</a> / <a href='Javascript: setori(2);'>ჰორიზონტალური</a></div>
 				<br><br>
 					<div id='erorebi' style='display:none;'>Tilebi (zoom:16)</div>
-					<b>პარამეტრები</b>
+					<b>პარამეტრები</b><br>
 					<table>
 						<tr><td>User:</td><td> <input type='text' id='myname' name='myname' value='youuser' size=12></td></tr>
-						<tr><td>Pass:</td><td> <input type='password' id='mypass' name='mypass' value='yourpass' size=6></td>
-						<td rowspan=2><a class="bg-danger text-light py-3 text-center" href='Javascript: saveuser(1);' id='arrived_but' style='display:block;'>შესვლა</a></td></tr>
+						<tr><td>Pass:</td><td> <input type='password' id='mypass' name='mypass' value='yourpass' size=6></td></tr>
+						<tr><td colspan=2><a class="bg-danger text-light py-3 text-center" href='Javascript: saveuser(1);' id='arrived_but' style='display:block;'>შესვლა</a></td></tr>
 					</table>
 			<Br><Br>
 		<a href='Javascript: show_map();' style='color:black; display:block; padding:10px border:1px solid gray; background-color:white;'>უკან დაბრუნება</a>
