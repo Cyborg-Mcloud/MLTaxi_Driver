@@ -288,9 +288,9 @@ function update_data()
 			//	document.getElementById('mainb').innerHTML="START";
 				if (document.getElementById("settings_sheet").style.display=="none")
 					{
-					document.getElementById("settings_sheet").style.display="block";
+					document.getElementById("settings_sheet").style.setProperty("display", "block", "important");
 					}
-				Start();
+				//Start();
 				//alert("please REGISTER at website: www.developer.design.ge/mytaxi");
 				}
 			else if (mr.substring(0,7)=="depozit")		
