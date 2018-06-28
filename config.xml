@@ -47,7 +47,12 @@
 <preference name="disable-cursor"             value="false" />
 <preference name="android-minSdkVersion"      value="11" />         
 <preference name="android-installLocation"    value="auto" />
-<preference name="EnableViewportScale"    value="true" />
+
+
+<preference name="StatusBarOverlaysWebView" value="true" />
+	<preference name="StatusBarStyle" value="lightcontent" />
+	<preference name="EnableViewportScale"    value="true" />
+	<preference name="disableImmersive" value="true" />
 
     <description>
      MLTaxi Driver App 
@@ -97,6 +102,8 @@
     <variable name="ANDROID_SUPPORT_VERSION" value="26.0.1" />
 </plugin>
 
+
+<gap:plugin name="cordova-plugin-statusbar" source="npm" />
 <!--
 <preference name="Orientation" value="portrait" />-->
 
