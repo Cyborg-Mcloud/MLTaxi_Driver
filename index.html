@@ -178,7 +178,7 @@ function onDeviceReady()
 	document.addEventListener("resume", onResume, false);
 //	window.addEventListener("deviceorientation", handleOrientation, true);
 
-	 navigator.compass.getCurrentHeading(onCompassSuccess, function (compassError) { console.log('Compass error: ' + compassError.code); })
+//	 navigator.compass.getCurrentHeading(onCompassSuccess, function (compassError) { console.log('Compass error: ' + compassError.code); })
 	var moptions = { frequency: 1000 };
 	watchID2 = navigator.compass.watchHeading(onCompassSuccess, onError, moptions);
 	
@@ -207,6 +207,7 @@ function myunload()
 		watchID = null;
 		}
 	}
+
 function onCompassSuccess(heading) 
 	{  
 	console.log(heading);

@@ -36,7 +36,7 @@
 
     <preference name="webviewbounce" value="false"/>
     <preference name="DisallowOverscroll" value="true"/>
-    <preference name="fullscreen" value="true"/>
+    <preference name="fullscreen" value="false"/>
     <preference name="keepRunning" value="true"/>
     <preference name="exit-on-suspend" value="false"/>
 	<preference name="stay-in-webview"            value="true" /> 
