@@ -155,12 +155,18 @@ function onDeviceReady()
 // See https://developer.android.com/reference/android/view/View.html#setSystemUiVisibility(int)
 //	AndroidFullScreen.setSystemUiVisibility(AndroidFullScreen.SYSTEM_UI_FLAG_FULLSCREEN, successFunction, errorFunction);
 
+console.log("device ready, dealing with user data");
+	ReadData();
+
 
 	console.log("device ready, checking connection");
 	checkConnection();
 
 	req_loc_acc();
 	req_loc_auth();
+
+document.getElementById("myname").value=MyUser;
+	document.getElementById("mypass").value=MyPass;
 
 	document.addEventListener("pause", onPause, false);
 	document.addEventListener("backbutton", onBackKeyDown, false);
@@ -182,9 +188,9 @@ function onDeviceReady()
 	var moptions = { frequency: 1000 };
 //	watchID2 = navigator.compass.watchHeading(onCompassSuccess, onError, moptions);
 	
-	console.log("device ready, dealing with record file");
 	
-	kc=checkIfFileExists("locdata.txt");
+	
+	
 	if (started==0)	
 		{
 		Start();
@@ -1630,7 +1636,7 @@ function saveuser()
 	MyPass=document.getElementById("mypass").value;
 
 	WriteData(); 
-	alert("user saved: "+MyUser);
+	//alert("user saved: "+MyUser);
 	if(started==0)
 		{
 		Start();
