@@ -330,7 +330,7 @@ function update_data()
 							{
 						//	setme();
 							}
-						//callid=curid;
+						//
 						
 						list_id[ka-1]=curid;
 						list_addr1[ka-1]=b[3];
@@ -342,8 +342,9 @@ function update_data()
 						console.log("curid: "+curid);
 						if (curid==sel_call_id)
 							{
-							// monishnuli zari
 
+							// monishnuli zari
+							callid=curid;
 							calllat=parseFloat(b[1]);
 							calllong=parseFloat(b[2]);	
 							txt_addr=b[3];
