@@ -654,30 +654,30 @@ var show_ids= new Array();
 var max_show_ids=0;
 function show_call_list()
 	{
-	if (maxlist>0)
+	if (max_calls>0)
 		{
 	
 		var refme=0;
-		if (maxlist!=max_show_ids)
+		if (max_calls!=max_show_ids)
 			{
 			refme=1;
 			}
 		if (refme==0)
 			{
-			for (i=0;i<maxlist ;i++ )
+			for (i=0;i<max_calls ;i++ )
 				{
 				if (show_ids[i]!=list_id[i])
 					{
 					refme=1;
-					i=maxlist;
+					i=max_calls;
 					}
 				}
 			}
 		if (refme==1)
 			{
-			max_show_ids=maxlist;
+			max_show_ids=max_calls;
 			document.getElementById("call_list_screen").innerHTML="";
-			for (i=0;i<maxlist ;i++ )
+			for (i=0;i<max_calls ;i++ )
 				{
 				addme="<div id='new_call_div_"+list_id[i]+"' style='margin:10px; border:1px solid gray; padding:5px;'><table width=100%><tr><td>"+list_addr1[i]+"</td><td rowspan=3>	<div class='px-3 text-center' >"+list_appr_price[i]+"₾<Br><a class='d-inline-block bg-danger py-2 px-3 text-white' style='border-radius: 30px; font-size: 16px;'  href='Javascript: call_dets("+list_id[i]+");'>დეტალურად</a></div></td></tr><tr><td>"+list_addr2[i]+"</td></tr><tr><td>"+list_addr3[i]+"</td></tr></table></div>";
 				show_ids[i]=list_id[i];
