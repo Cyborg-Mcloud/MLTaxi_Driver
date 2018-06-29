@@ -26,6 +26,7 @@ function gotFileEntry(fileEntry)
 function gotFileWriter(writer) 
 	{
 	writer.write(MyUser+";"+MyPass+";"+MyZoom+";"+wlon+";"+wlat+";"+myid);
+	console.log("writing: "+MyUser+ " - "+MyPass+ " - "+MyZoom+ " - "+wlat+ " - "+wlon+ +" - "+myid);
 
 	}
 
@@ -70,6 +71,7 @@ function readAsText(file)
 
 		document.getElementById("myname").value=MyUser;
 		document.getElementById("mypass").value=MyPass;
+		console.log("reading: "+MyUser+ " - "+MyPass+ " - "+MyZoom+ " - "+wlat+ " - "+wlon+"-"+myid);
 		console.log("data read finished");
 		};
 	reader.readAsText(file);
