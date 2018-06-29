@@ -318,12 +318,13 @@ function update_data()
 				if (a[0]=="newcall")
 					{
 //					document.getElementById("client_center").style.display="inline";
-					max_calls=a.length-1;
+					max_calls=a.length-2;
+					console.log("maxcalls: "+max_calls);
 					for (ka=1;ka<max_calls+1 ;ka++ )
 						{
 						
 
-						b=a[1].split(";");
+						b=a[ka].split(";");
 						curid=b[0];
 						if (callid!=curid && myself==0)
 							{
@@ -338,7 +339,7 @@ function update_data()
 						list_appr_price[ka-1]=b[14];
 
 
-
+						console.log("curid: "+curid);
 						if (curid==sel_call_id)
 							{
 							// monishnuli zari
