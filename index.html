@@ -348,7 +348,7 @@ function update_data()
 						console.log("curid: "+curid);
 						if (curid==sel_call_id)
 							{
-
+							console.log("zari monishnulia: "+sel_call_id);
 							// monishnuli zari
 							callid=curid;
 							calllat=parseFloat(b[1]);
@@ -409,6 +409,7 @@ function update_data()
 					}
 				else if (a[0]=="yourcall")
 					{
+					sel_call_id=-1;
 					callconfirming=0;
 //					document.getElementById("client_center").style.display="inline";
 					b=a[1].split(";");
@@ -453,6 +454,7 @@ function update_data()
 					}
 				else if (a[0]=="waiting")
 					{
+						sel_call_id=-1;
 					callconfirming=0;
 //					document.getElementById("client_center").style.display="inline";
 					b=a[1].split(";");
@@ -494,6 +496,7 @@ function update_data()
 					}
 				else if (a[0]=="usercoming")
 					{
+						sel_call_id=-1;
 					callconfirming=0;
 //					document.getElementById("client_center").style.display="inline";
 					b=a[1].split(";");
@@ -536,6 +539,7 @@ function update_data()
 					}
 				else if (a[0]=="moving")
 					{
+						sel_call_id=-1;
 					callconfirming=0;
 //					document.getElementById("client_center").style.display="none";
 
@@ -589,6 +593,7 @@ function update_data()
 					}
 				else
 					{
+						sel_call_id=-1;
 					depoz=parseFloat(a[1]);
 						document.getElementById("mbal").innerHTML=depoz+"₾";
 					callconfirming=0;
