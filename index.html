@@ -681,7 +681,7 @@ function show_call_list()
 				{
 				addme="<div id='new_call_div_"+list_id[i]+"' style='margin:10px; border:1px solid gray; padding:5px;'><table width=100%><tr><td>"+list_addr1[i]+"</td><td rowspan=3>	<div class='px-3 text-center' >"+list_appr_price[i]+"₾<Br><a class='d-inline-block bg-danger py-2 px-3 text-white' style='border-radius: 30px; font-size: 16px;'  href='Javascript: call_dets("+list_id[i]+");'>დეტალურად</a></div></td></tr><tr><td>"+list_addr2[i]+"</td></tr><tr><td>"+list_addr3[i]+"</td></tr></table></div>";
 				show_ids[i]=list_id[i];
-				document.getElementById("call_list_screen")+=addme;
+				document.getElementById("call_list_screen").innerHTML+=addme;
 				}
 			document.getElementById("call_list_screen").style.setProperty("display", "block", "important");
 			}
