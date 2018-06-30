@@ -345,7 +345,8 @@ function update_data()
 						list_appr_price[ka-1]=b[14];
 
 
-						console.log("curid: "+curid);
+						console.log("curid: "+curid + " selcallid: "+sel_call_id);
+
 						if (curid==sel_call_id)
 							{
 							console.log("zari monishnulia: "+sel_call_id);
@@ -694,7 +695,7 @@ function show_call_list()
 			document.getElementById("call_list_screen").innerHTML="";
 			for (i=0;i<max_calls ;i++ )
 				{
-addme='<div class="d-flex mb-4"  id="new_call_div_'+list_id[i]+'"><div class="flex-grow-1"><div class="pr-4"><ul><li class="py-1" style="background: #eee; padding: 15px; margin: 2px 0;">'+list_addr1[i]+'</li><li class="py-1" style="background: #eee; padding: 15px; margin: 2px 0;">'+list_addr2[i]+'</li><li class="py-1" style="background: #eee; padding: 15px; margin: 2px 0;">'+list_addr3[i]+'</li>	</ul></div></div><div class="px-3 text-center"><span style="font-size: 20px">₾'+list_appr_price[i]+'</span><hr style="border-color: #6fdd00; border-width: 5px; margin: 5px 0;" />ნაღდი<br /><a href="Javascript: call_dets();" class="btn btn-danger btn-sm mt-1" style="border-radius: 20px">მიღება</a></div></div>'
+addme='<div class="d-flex mb-4"  id="new_call_div_'+list_id[i]+'"><div class="flex-grow-1"><div class="pr-4"><ul><li class="py-1" style="background: #eee; padding: 15px; margin: 2px 0;">'+list_addr1[i]+'</li><li class="py-1" style="background: #eee; padding: 15px; margin: 2px 0;">'+list_addr2[i]+'</li><li class="py-1" style="background: #eee; padding: 15px; margin: 2px 0;">'+list_addr3[i]+'</li>	</ul></div></div><div class="px-3 text-center"><span style="font-size: 20px">₾'+list_appr_price[i]+'</span><hr style="border-color: #6fdd00; border-width: 5px; margin: 5px 0;" />ნაღდი<br /><a href="Javascript: call_dets('+list_id[i]+');" class="btn btn-danger btn-sm mt-1" style="border-radius: 20px">მიღება</a></div></div>'
 
 
 				
@@ -997,7 +998,7 @@ function doOnOrientationChange()
     <Center>ჩართეთ ინტერნეტ კავშირი</center>
   </div>
 
-<div class="container-fluid py-3"  id="call_list_screen" style="background-color:white; display:none!important; z-index:500; position:fixed; top:70px; left:0px; width:100%; height: 300px; max-height: 300px; overflow-y: scroll">
+<div class="container-fluid py-3"  id="call_list_screen" style="background-color:white; display:none!important; z-index:500; position:fixed; top:85px; left:0px; width:100%; height: 300px; max-height: 300px; overflow-y: scroll">
 
 
 	<div class="d-flex mb-4"  id='new_call_div_1'><div class="flex-grow-1"><div class="pr-4"><ul><li class="py-1" style="background: #eee; padding: 15px; margin: 2px 0;">აღმაშენებლის 14</li><li class="py-1" style="background: #eee; padding: 15px; margin: 2px 0;">2 ჩიხი, 3 სადარბაზო 14</li><li class="py-1" style="background: #eee; padding: 15px; margin: 2px 0;">ბუხაუძის 8</li>	</ul></div></div><div class="px-3 text-center"><span style="font-size: 20px">₾15</span><hr style="border-color: #6fdd00; border-width: 5px; margin: 5px 0;" />ნაღდი<br /><a href="Javascript: call_dets();" class="btn btn-danger btn-sm mt-1" style="border-radius: 20px">მიღება</a></div></div>
