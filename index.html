@@ -1127,17 +1127,28 @@ function doOnOrientationChange()
 			</div>-->
 
 	<div class="footer w-100" id='user_pay_screen'  style='position:fixed; bottom:0px; left:0px; background-color:white; display:none; '>
-		<a class="bg-danger text-light py-3 text-center" href='Javascript: userpay(1);' id='arrived_but' style='display:block;'>
-			მგზავრობის დასრულება
-		</a>
-		<div class="text-center py-2 mb-4" style="border-bottom: 1px solid red">
-			მანძილი: <span name='meters_txt' id='meters_txt' style=' font-size:24px; color:black;'></span>კმ | თანხა: <span style=' font-size:24px; color:black;'  name='price_txt' id='price_txt'></span> ლარი
+		<div class="container-fluid py-3">
+			<div class="text-center">
+				<a href='Javascript: userpay(1);' class="btn btn-danger w-50" style="border-radius: 20px">დასრულება</a>
+			</div>
 		</div>
+
+		<div class="container-fluid py-2">
+			<div class="d-flex align-items-center justify-content-around">
+				<div><span style="font-size: 20px">მანძილი:  <span name='meters_txt' id='meters_txt' style=' font-size:20px; color:black;'></span></span></div>
+				<div></div>
+				<div><span style="font-size: 20px">თანხა: <span style=' font-size:20px; color:black;'  name='price_txt' id='price_txt'></span> ლარი</span></div>
+			</div>
+		</div>
+		<!--<a class="bg-danger text-light py-3 text-center" href='Javascript: userpay(1);' id='arrived_but' style='display:block;'>
+			მგზავრობის დასრულება
+		</a>-->
+
 		<div class="container-fluid py-2">
 			<div class="d-flex align-items-center justify-content-between">
+				<div></div>
 				<div><img src="assets/images/taxi.svg" height="32" /></div>
-				<div class="text-center"><img src="assets/images/logo.svg" height="74" /></div>
-				<div><img src="assets/images/taxi.svg" height="32" /></div>
+				<div></div>
 			</div>
 		</div>
 	</div>
