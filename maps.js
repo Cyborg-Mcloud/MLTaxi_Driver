@@ -3,7 +3,7 @@ var infoWindow, tempMarker, geocoder;
 var dirService, dirRender;
 var startMarker, endMarker, thirdMarker, positionMarker;
 var startPosListener, endPosListener, selPosListener;
-
+var START_ICON, END_ICON, THIRD_END_ICON;
 function geocodeLocation(position, infoWindow, markerName) {
     console.log("geocodeLocation")
 }
@@ -36,6 +36,14 @@ console.log("mere");
     };
     END_ICON = {
         url: "resources/pin_end.svg", // url
+        scaledSize: new google.maps.Size(30, 36), // size
+        origin: new google.maps.Point(0, 0), // origin
+        anchor: new google.maps.Point(15, 36), // anchor
+        ratation: 30
+    };
+
+	THIRD_END_ICON = {
+        url: "resources/pin_red.svg", // url
         scaledSize: new google.maps.Size(30, 36), // size
         origin: new google.maps.Point(0, 0), // origin
         anchor: new google.maps.Point(15, 36), // anchor
@@ -82,7 +90,7 @@ console.log("mere");
     });
 
 	thirdMarker = new google.maps.Marker({
-        icon: END_ICON, map: mymap
+        icon: THIRD_END_ICON, map: mymap
     });
     positionMarker = new google.maps.Marker({
         position: position,
@@ -292,6 +300,6 @@ function addAndGetMarker(map, position, bounds, label, icon)
 
 }
 
-var START_ICON, END_ICON;
+
 
 //  mapTypeId: 'satellite',
