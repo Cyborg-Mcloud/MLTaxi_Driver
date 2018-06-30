@@ -374,7 +374,7 @@ function update_data()
 							depoz=parseFloat(b[15]);
 							
 							console.log("last and new: " +last_status+ " / "+mystatus);
-							if (last_status!=101)
+							if (last_status!=101 )
 								{
 
 								ertxelmainc=1;
@@ -712,6 +712,8 @@ function call_dets(mcid)
 
 function close_dets()
 	{
+		sel_call_id=-1;
+		last_status=0;
 	set_status(0);
 	document.getElementById("call_list_screen").style.setProperty("display", "block", "important");
 	}
