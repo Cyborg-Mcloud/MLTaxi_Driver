@@ -65,10 +65,10 @@ console.log("mere");
     };
 
 	var symicon = {
-        url: "arrow.svg", // url
-        scaledSize: new google.maps.Size(50, 50), // size
+        url: "cursor.svg", // url
+        scaledSize: new google.maps.Size(30, 38), // size
         origin: new google.maps.Point(0, 0), // origin
-        anchor: new google.maps.Point(25, 25), // anchor
+        anchor: new google.maps.Point(15, 30), // anchor
 		rotation:mrot
     };
 
