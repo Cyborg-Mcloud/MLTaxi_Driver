@@ -303,6 +303,7 @@ function update_data()
 				if (curwindow==0)
 					{
 					show_settings();
+					curwindow=2;
 					}
 				//Start();
 				//alert("please REGISTER at website: www.developer.design.ge/mytaxi");
@@ -316,9 +317,9 @@ function update_data()
 				}
 			else
 				{
-				if (curwindow==1)
+				if (curwindow==2)
 					{
-						show_map();
+					show_map();
 					}
 				a=mr.split("|");
 				if (a[0]=="newcall")
@@ -594,12 +595,12 @@ function update_data()
 					}
 				else
 					{
-						sel_call_id=-1;
+					sel_call_id=-1;
 					depoz=parseFloat(a[1]);
-						document.getElementById("mbal").innerHTML=depoz+"₾";
+					document.getElementById("mbal").innerHTML=depoz+"₾";
 					callconfirming=0;
 //					document.getElementById("client_center").style.display="none";
-					if (curdisp!=0)	{set_status(0); 					last_status=mystatus;}
+					if (curdisp!=0)	{set_status(0); last_status=mystatus;}
 					txt_addr="";
 					calllong=0;
 					calllat=0;
@@ -623,6 +624,7 @@ function update_data()
 
 					document.getElementById("new_call_screen").style.setProperty("display", "none", "important");
 					document.getElementById("no_call_screen").style.setProperty("display", "block", "important");
+					show_call_list();
 					}
 				if (inpause==0)	{DrawUsers();}
 
@@ -703,6 +705,7 @@ function show_call_list()
 				show_ids[i]=list_id[i];
 				document.getElementById("call_list_screen").innerHTML+=addme;
 				}
+			document.getElementById("call_list_screen").innerHTML+="<BR><BR><BR>";
 			document.getElementById("call_list_screen").style.setProperty("display", "block", "important");
 			}
 		}
