@@ -698,7 +698,7 @@ function show_call_list()
 			document.getElementById("call_list_screen").innerHTML="";
 			for (i=0;i<max_calls ;i++ )
 				{
-				addme='<div class="d-flex mb-4"  id="new_call_div_'+list_id[i]+'"><div class="flex-grow-1"><div class="pr-4"><ul><li class="py-1" style="background: #eee; padding: 15px; margin: 2px 0;">'+list_addr1[i]+'</li><li class="py-1" style="background: #eee; padding: 15px; margin: 2px 0;">'+list_addr2[i]+'</li><li class="py-1" style="background: #eee; padding: 15px; margin: 2px 0;">'+list_addr3[i]+'</li>	</ul></div></div><div class="px-3 text-center"><span style="font-size: 20px">₾'+list_appr_price[i]+'-'+(list_appr_price[i]+1)+'</span><hr style="border-color: #6fdd00; border-width: 5px; margin: 5px 0;" />ნაღდი<br /><a href="Javascript: call_dets('+list_id[i]+');" class="btn btn-danger btn-sm mt-1" style="border-radius: 20px">დეტალურად</a></div></div>'
+				addme='<div class="d-flex mb-4"  id="new_call_div_'+list_id[i]+'"><div class="flex-grow-1"><div class="pr-4"><ul><li class="py-1" style="background: #eee; padding: 15px; margin: 2px 0;">'+list_addr1[i]+'</li><li class="py-1" style="background: #eee; padding: 15px; margin: 2px 0;">'+list_addr2[i]+'</li><li class="py-1" style="background: #eee; padding: 15px; margin: 2px 0;">'+list_addr3[i]+'</li>	</ul></div></div><div class="px-3 text-center"><span style="font-size: 20px">₾'+list_appr_price[i]+'-'+parseInt(list_appr_price[i]+1)+'</span><hr style="border-color: #6fdd00; border-width: 5px; margin: 5px 0;" />ნაღდი<br /><a href="Javascript: call_dets('+list_id[i]+');" class="btn btn-danger btn-sm mt-1" style="border-radius: 20px">დეტალურად</a></div></div>'
 
 
 				
@@ -1425,7 +1425,7 @@ function set_status(newstat)
 
 		document.getElementById("usertel").innerHTML=call_tel;
 		document.getElementById("qucha_txt").innerHTML='<ul><li class="py-1" style="background: #eee; padding: 15px; margin: 2px 0;">'+txt_addr+'</li><li class="py-1" style="background: #eee; padding: 15px; margin: 2px 0;">'+ call_dest_addr+'</li><li class="py-1" style="background: #eee; padding: 15px; margin: 2px 0;">'+ call_dest_addr1+'</li></ul>';
-		document.getElementById("varaudi").innerHTML="<h3><b>"+appr_price+"-"+(appr_price+1)+"₾</b></h3>";		
+		document.getElementById("varaudi").innerHTML="<h3><b>"+appr_price+"-"+parseInt(appr_price+1)+"₾</b></h3>";		
 			document.getElementById("mbal").innerHTML=depoz+"₾";
 		console.log("texti 1: "+txt_addr+"<BR>მიმართულება:"+call_dest_addr+"<BR>"+call_tel+ "<BR>"+call_dest_addr1);
 //		myaudio.play();
@@ -1459,7 +1459,7 @@ function set_status(newstat)
 
 		
 		document.getElementById("qucha_txt").innerHTML='<ul><li class="py-1" style="background: #eee; padding: 15px; margin: 2px 0;">'+txt_addr+'</li><li class="py-1" style="background: #eee; padding: 15px; margin: 2px 0;">'+ call_dest_addr+'</li><li class="py-1" style="background: #eee; padding: 15px; margin: 2px 0;">'+ call_dest_addr1+'</li></ul>';				
-		document.getElementById("varaudi").innerHTML="<h3><b>"+appr_price+"₾</b></h3>";
+		document.getElementById("varaudi").innerHTML="<h3><b>"+appr_price+"-"+parseInt(appr_price+1)+"₾</b></h3>";
 			document.getElementById("mbal").innerHTML=depoz+"₾";
 		console.log("texti 2: "+txt_addr+"<BR>მიმართულება:"+call_dest_addr+"<BR>"+call_tel+ "<BR>"+call_dest_addr1);
 		mystatus=1;
@@ -1490,7 +1490,7 @@ function set_status(newstat)
 		document.getElementById("mbal").innerHTML=depoz+"₾";
 		document.getElementById("usertel").innerHTML=call_tel;
 		document.getElementById("qucha_txt").innerHTML='<ul><li class="py-1" style="background: #eee; padding: 15px; margin: 2px 0;">'+txt_addr+'</li><li class="py-1" style="background: #eee; padding: 15px; margin: 2px 0;">'+ call_dest_addr+'</li><li class="py-1" style="background: #eee; padding: 15px; margin: 2px 0;">'+ call_dest_addr1+'</li></ul>';		
-		document.getElementById("varaudi").innerHTML="<h3><b>"+appr_price+"₾</b></h3>";
+		document.getElementById("varaudi").innerHTML="<h3><b>"+appr_price+"-"+parseInt(appr_price+1)+"₾</b></h3>";
 
 				
 		console.log("texti 3: "+txt_addr+"<BR>მიმართულება:"+call_dest_addr+"<BR>"+call_tel+ "<BR>"+call_dest_addr1);
@@ -1522,7 +1522,7 @@ function set_status(newstat)
 		document.getElementById("mbal").innerHTML=depoz+"₾";
 		document.getElementById("usertel").innerHTML=call_tel;
 		document.getElementById("qucha_txt").innerHTML='<ul><li class="py-1" style="background: #eee; padding: 15px; margin: 2px 0;">'+txt_addr+'</li><li class="py-1" style="background: #eee; padding: 15px; margin: 2px 0;">'+ call_dest_addr+'</li><li class="py-1" style="background: #eee; padding: 15px; margin: 2px 0;">'+ call_dest_addr1+'</li></ul>';
-		document.getElementById("varaudi").innerHTML="<h3><b>"+appr_price+"₾</b></h3>";
+		document.getElementById("varaudi").innerHTML="<h3><b>"+appr_price+"-"+parseInt(appr_price+1)+"₾</b></h3>";
 
 		console.log("4: "+txt_addr+"<BR>მიმართულება:"+call_dest_addr+"<BR>"+call_tel+ "<BR>"+call_dest_addr1);
 		mystatus=4;
@@ -1551,7 +1551,7 @@ function set_status(newstat)
 		document.getElementById("mbal").innerHTML=depoz+"₾";
 		document.getElementById("usertel").innerHTML=call_tel;
 		document.getElementById("qucha_txt").innerHTML='<ul><li class="py-1" style="background: #eee; padding: 15px; margin: 2px 0;">'+txt_addr+'</li><li class="py-1" style="background: #eee; padding: 15px; margin: 2px 0;">'+ call_dest_addr+'</li><li class="py-1" style="background: #eee; padding: 15px; margin: 2px 0;">'+ call_dest_addr1+'</li></ul>';
-		document.getElementById("varaudi").innerHTML="<h3><b>"+appr_price+"₾</b></h3>";
+		document.getElementById("varaudi").innerHTML="<h3><b>"+appr_price+"-"+parseInt(appr_price+1)+"₾</b></h3>";
 		
 		console.log("5: "+txt_addr+"<BR>მიმართულება:"+call_dest_addr+"<BR>"+call_tel);
 
