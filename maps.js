@@ -158,7 +158,7 @@ function rotate_marker(kutxe)
 	console.log("rotate marker: "+kutxe+" Myhead=" +MyHead);
 
  symicon = {
-        url: "arrow.svg", // url
+        url: "cursor.svg", // url
         scaledSize: new google.maps.Size(50, 50), // size
         origin: new google.maps.Point(0, 0), // origin
         anchor: new google.maps.Point(25, 25), // anchor
