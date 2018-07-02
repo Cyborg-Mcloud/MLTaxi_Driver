@@ -64,14 +64,22 @@ console.log("mere");
         anchor: new google.maps.Point(25, 25) // anchor
     };
 
-	symicon={
-				path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
-				fillColor: '#000000',
-				strokeColor: '#000000',
-				strokeWeight: 6,
-				scale: 10,
-				rotation: mrot
-				}
+	var symicon = {
+        url: "resources/arrow.svg", // url
+        scaledSize: new google.maps.Size(50, 50), // size
+        origin: new google.maps.Point(0, 0), // origin
+        anchor: new google.maps.Point(25, 25), // anchor
+		rotation:mrot
+    };
+
+	//symicon={
+	//			path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
+//				fillColor: '#000000',
+//				strokeColor: '#000000',
+//				strokeWeight: 6,
+//				scale: 10,
+//				rotation: mrot
+//				}
 
 //    var gpsIcon = {
 //        url: "resources/images/Clustericon.svg", // url
@@ -148,14 +156,23 @@ function rotate_marker(kutxe)
 		}
 	//document.getElementById("stat_but").innerHTML=kutxe;
 	console.log("rotate marker: "+kutxe+" Myhead=" +MyHead);
-symicon={
-	path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
-	fillColor: '#000000',
-	strokeColor: '#000000',
-	strokeWeight: 5,
-	scale: 10,
-	rotation: kutxe
-	}
+
+ symicon = {
+        url: "resources/arrow.svg", // url
+        scaledSize: new google.maps.Size(50, 50), // size
+        origin: new google.maps.Point(0, 0), // origin
+        anchor: new google.maps.Point(25, 25), // anchor
+		rotation:kutxe
+    };
+
+//symicon={
+//	path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
+//	fillColor: '#000000',
+//	strokeColor: '#000000',
+//	strokeWeight: 5,
+//	scale: 10,
+//	rotation: kutxe
+//	}
 	positionMarker.setIcon(symicon);
 	}
 function geocodeOnClick(e) 
