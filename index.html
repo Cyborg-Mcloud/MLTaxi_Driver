@@ -1235,7 +1235,7 @@ function doOnOrientationChange()
 		<div class="content w-100 h-100 text-center ">
 			<div class="py-2">
 				<p align="center"><a href='Javascript: saveuser(1);'  class="btn btn-danger m-auto" style="border-radius: 30px; font-size: 16px">შენახვა</a></p>
-					<p align="center"><a href='Javascript: show_map();' class="btn btn-danger m-auto" style="border-radius: 30px; font-size: 16px">დახურვა</a></p>
+					<p align="center"><a href='Javascript: show_map(); curwindow=2;' class="btn btn-danger m-auto" style="border-radius: 30px; font-size: 16px">დახურვა</a></p>
 			</div>
 		</div>
 
@@ -1694,7 +1694,7 @@ function saveuser()
 	MyPass=document.getElementById("mypass").value;
 
 	WriteData(); 
-	alert("user saved: "+MyUser);
+//	alert("user saved: "+MyUser);
 	if(started==0)
 		{
 		Start();
