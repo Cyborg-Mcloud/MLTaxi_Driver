@@ -981,7 +981,7 @@ function doOnOrientationChange()
 </div>
 	
 
-<a href='Javascript: setme();' style='position:fixed; top:130px; right:5px; margin:5px; z-index:252; '><img id='cbut' src='assets/images/dir_arrow.png' style='width:30px; height:30px;'></a>
+<a href='Javascript: setme();' style='position:fixed; top:130px; right:5px; margin:5px; z-index:252; '><img id='cbut' src='assets/images/dir_arrow.png' style='width:40px; height:40px;'></a>
 
 
 <!--<a href='Javascript: set_client();' style='position:fixed; bottom:50px; left:5px; margin:5px; z-index:252; '  id='client_center' style='display:none;'><img id='client_but' src='client_icon.png'></a> <!--visibility:hidden-->
@@ -1599,8 +1599,14 @@ function setme()
 	console.log("setme");
 
 	if(myself!=1)
-		{myself=1; document.getElementById("cbut").src='center_sel.svg';document.getElementById("client_but").src='client_icon.png';}
-	else {myself=0;document.getElementById("cbut").src='center.svg';}
+		{myself=1;
+		//document.getElementById("cbut").src='center_sel.svg';
+		//document.getElementById("client_but").src='client_icon.png';
+		}
+	else 
+		{myself=0;
+		//document.getElementById("cbut").src='center.svg';
+		}
 
 	}
 
@@ -1724,7 +1730,7 @@ function setmypos()
 	if (myself==1)
 		{
 		//mymap.setMyLocationEnabled(true);
-//		mymap.panTo(positionMarker.getPosition());
+		mymap.panTo(positionMarker.getPosition());
 		}
 
 
