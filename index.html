@@ -621,12 +621,17 @@ function update_data()
 					thirdMarker.setMap(null);
 					dirRender.setMap(null);
 					dirsetmap=0;
-					
-					max_calls=0;
+					if (max_calls>0)
+						{
+						show_map();
+						max_calls=0;
+						show_call_list();
+						}
+
 
 					document.getElementById("new_call_screen").style.setProperty("display", "none", "important");
 					document.getElementById("no_call_screen").style.setProperty("display", "block", "important");
-					show_call_list();
+
 					}
 				if (inpause==0)	{DrawUsers();}
 
