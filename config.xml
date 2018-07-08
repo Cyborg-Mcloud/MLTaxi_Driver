@@ -2,8 +2,8 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
 		xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.designge.mltaxidriver"
-	    versionCode="19" 
-        version   = "1.0.5"
+	    versionCode="20" 
+        version   = "1.0.6"
 		package="com.designge.mltaxidriver"
 		xmlns:android="http://schemas.android.com/apk/res/android">
 
