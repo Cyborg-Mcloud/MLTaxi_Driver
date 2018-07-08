@@ -621,6 +621,8 @@ function update_data()
 					thirdMarker.setMap(null);
 					dirRender.setMap(null);
 					dirsetmap=0;
+					
+					max_calls=0;
 
 					document.getElementById("new_call_screen").style.setProperty("display", "none", "important");
 					document.getElementById("no_call_screen").style.setProperty("display", "block", "important");
@@ -630,8 +632,6 @@ function update_data()
 
 				if (userebic==1)
 					{
-					
-
 					a=mr.split("|");
 					for (i=0;i<(a.length-1);i++ )
 						{
@@ -708,6 +708,10 @@ function show_call_list()
 			document.getElementById("call_list_screen").innerHTML+="<BR><BR><BR>";
 			document.getElementById("call_list_screen").style.setProperty("display", "block", "important");
 			}
+		}
+	else
+		{
+		document.getElementById("call_list_screen").innerHTML="";
 		}
 
 	}
