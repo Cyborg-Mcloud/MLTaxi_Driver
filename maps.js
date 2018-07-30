@@ -105,14 +105,7 @@ function calcRoute(from_loc, to_loc, third_loc, third_lata)
 		referencePoints: [ start, end, mtlad_end ], params: {results: 2} }, {boundsAutoApply: true});
 		myMap.geoObjects.add(multiRoute2);
 	
-		multiRoute2.model.events.add("requestsuccess", function (event) {
-
-			console.log("mroute2: "+multiRoute2.getRoutes().get(0).properties.get('distance').value);
-			totalDistance=multiRoute2.getRoutes().get(0).properties.get('distance').value;
-
-			appr_price=parseInt(sit_price[call_class]+(totalDistance/1000)*kmprice[call_class]);
-			console.log("distance: "+totalDistance+", appr_price: "+appr_price);
-			});
+	
 
 		}
 	else
@@ -122,16 +115,7 @@ function calcRoute(from_loc, to_loc, third_loc, third_lata)
 		multiRoute = new ymaps.multiRouter.MultiRoute({
 		referencePoints: [ start, end], params: {results: 2} }, {boundsAutoApply: true});
 		myMap.geoObjects.add(multiRoute);
-		multiRoute.model.events.add("requestsuccess", function (event) {
-
-			console.log("mroute: "+multiRoute.getRoutes().get(0).properties.get('distance').value);
-			totalDistance=multiRoute.getRoutes().get(0).properties.get('distance').value;
-
-			appr_price=parseInt(sit_price[call_class]+(totalDistance/1000)*kmprice[call_class]);
-			console.log("distance: "+totalDistance+", appr_price: "+appr_price);
-			document.getElementById("dirinfo").innerHTML='<p style="font-size: 20px">'+parseInt(totalDistance/1000)+'კმ / '+parseInt(appr_price) +"-"+parseInt(appr_price+1)+'₾</p>';
-			document.getElementById("dirinfo_parent").style.display="block";
-			});
+	
 		}
 
 
