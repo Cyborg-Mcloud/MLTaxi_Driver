@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <meta http-equiv="Content-Security-Policy"
-      content="img-src * 'self' data:; default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://maps.googleapis.com; font-src 'self'  https://fonts.googleapis.com;">
+      content="img-src * 'self' data:; default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://api-maps.yandex.ru https://suggest-maps.yandex.ru;">
 	  
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 	<head>
@@ -26,7 +26,7 @@
 var myaudio = new Audio('call.mp3');
 myaudio.loop = false;
 var myid = 0;
-var mymap;
+
 var cur_price=0;
 
 var nogps = 0;
@@ -155,8 +155,8 @@ function onDeviceReady()
 // See https://developer.android.com/reference/android/view/View.html#setSystemUiVisibility(int)
 //	AndroidFullScreen.setSystemUiVisibility(AndroidFullScreen.SYSTEM_UI_FLAG_FULLSCREEN, successFunction, errorFunction);
 
-kc=checkIfFileExists("locdata.txt");
-ReadData();
+	kc=checkIfFileExists("locdata.txt");
+	ReadData();
 
 	console.log("device ready, checking connection");
 	checkConnection();
@@ -578,9 +578,10 @@ function update_data()
 
 
 					console.log(call_dest_lat1+" <- -> "+call_dest_long1);
-										console.log("mesame misamarti: "+call_dest_addr1);
+					console.log("mesame misamarti: "+call_dest_addr1);
+					
 					ertxelmainc=1;
-					if (call_dest_lat>30 && (this_time-last_route)>30 &&  mystatus!=5)
+					if (call_dest_lat>30 && (this_time-last_route)>10)// &&  mystatus!=5)
 						{
 						var startpos = {lat: MyLat, lng: MyLong};
 						var endpos = {lat: call_dest_lat, lng: call_dest_long};
@@ -588,7 +589,10 @@ function update_data()
 						calcRoute(startpos, endpos, dirService, dirRender, thirdpos, call_dest_lat1);
 
 						}
-					if (callid!=curid && myself==0) {setme();}
+					if (callid!=curid && myself==0)
+						{
+						//setme();
+						}
 					draw_markers();
 					set_status(5);
 					last_status=mystatus;
@@ -616,10 +620,12 @@ function update_data()
 					call_dest_lat1=0;
 					call_dest_long1=0;
 					call_dest_addr1="";
-					startMarker.setMap(null);
-					endMarker.setMap(null);
-					thirdMarker.setMap(null);
-					dirRender.setMap(null);
+					
+					myMap.geoObjects.remove(multiRoute);
+					myMap.geoObjects.remove(multiRoute2);
+					myMap.geoObjects.remove(startMarker);
+					myMap.geoObjects.remove(endMarker);
+					myMap.geoObjects.remove(thirdmarker);
 					dirsetmap=0;
 					if (max_calls>0)
 						{
@@ -854,9 +860,9 @@ function onSuccess(position)
 		//wlat=MyLat;
 		console.log("on succ, sett long");
 
-		var latlng = new google.maps.LatLng(MyLat, MyLong);
-		positionMarker.setPosition(latlng);
-
+		
+		positionMarker.geometry.setCoordinates([position.coords.latitude,position.coords.longitude]);
+	
 		if (started==0 && MyUser!="nouser")	{Start();}
 		if (myself==1 && inpause==0)
 			{
@@ -926,25 +932,28 @@ function onWatchSuccess(position)
 
 function draw_markers()
 	{
-	var myLatLng = {lat: calllat, lng: calllong};
-    startMarker.setPosition(myLatLng);
-	startMarker.setMap(mymap);
+//	var myLatLng = {lat: calllat, lng: calllong};
+
+
+	startMarker = new ymaps.Placemark([calllat,calllong], {hintContent: 'სტარტი', balloonContent: 'სტარტი'}, {iconLayout: 'default#image', iconImageHref: 'resources/pin_start.svg', iconImageSize: [30, 30], iconImageOffset: [-15, 0]  });
+	myMap.geoObjects.add(startMarker);
 
 	if (call_dest_lat>0)
 		{
-		var myLatLng = {lat: call_dest_lat, lng: call_dest_long};
-		endMarker.setPosition(myLatLng);
-		endMarker.setMap(mymap);
+//		var myLatLng = {lat: call_dest_lat, lng: call_dest_long};
+		endMarker = new ymaps.Placemark([call_dest_lat,call_dest_long], {hintContent: 'დასასრული', balloonContent: 'დასასრული'}, {iconLayout: 'default#image', iconImageHref: 'resources/pin_end.svg', iconImageSize: [30, 30], iconImageOffset: [-15, 0]  });
+		myMap.geoObjects.add(endMarker);
 		}
 
 	if (call_dest_lat1>0)
 		{
-		var myLatLng = {lat: call_dest_lat1, lng: call_dest_long1};
+		//var myLatLng = {lat: call_dest_lat1, lng: call_dest_long1};
 		console.log("third marker: ");
 		console.log(myLatLng);
-
-		thirdMarker.setPosition(myLatLng);
-		thirdMarker.setMap(mymap);
+		thirdmarker = new ymaps.Placemark([call_dest_lat1,call_dest_long1], {hintContent: 'დასასრული', balloonContent: 'დასასრული'}, {iconLayout: 'default#image', iconImageHref: 'resources/pin_red.svg', iconImageSize: [30, 30], iconImageOffset: [-15, 0]  });
+		myMap.geoObjects.add(thirdmarker);
+		
+		
 		}
 	}
 
@@ -987,8 +996,7 @@ function doOnOrientationChange()
 
 			  <div id="gmap"  style='position:absolute; left:0px; top:0px; height:100%; width:100%; display:block;'></div>
 		</div>
-		 <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFY47FE__z9AvRLBoYG0T2XeOTiHdwzOQ&callback=initMap&language=ka&libraries=places"></script>
+		  <script src="https://api-maps.yandex.ru/2.1/?lang=ka_GE" type="text/javascript"></script>
 </div>
 	
 
@@ -1740,8 +1748,8 @@ function setmypos()
     }
 	if (myself==1)
 		{
-		//mymap.setMyLocationEnabled(true);
-		mymap.panTo(positionMarker.getPosition());
+		//myMap.setMyLocationEnabled(true);
+		myMap.panTo(positionMarker.geometry.getCoordinates());
 		}
 
 
@@ -1924,6 +1932,9 @@ function calc_bearing2(lat1, long1, lat2, long2)
 	return (brng*360/6.28+360) % 360;
 
 	}
+
+
+ymaps.ready(initMap);
 
 </script></body>
 </html>
