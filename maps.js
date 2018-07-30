@@ -25,23 +25,6 @@ function initMap(ymaps)
     var strictBounds = document.getElementById('strict-bounds-selector');
 
 	
-	var suggestView = new ymaps.SuggestView(input,{ boundedBy: city_bounds, results: 7});
-	var suggestView1 = new ymaps.SuggestView(input2,{ boundedBy:city_bounds, results: 7});
-	var suggestView2 = new ymaps.SuggestView(input3,{ boundedBy: city_bounds, results: 7});
-
-	suggestView.events.add('select', function (e) {
-		console.log(e.get('item').value);
-		mgeocode(e.get('item').value);
-		});
-	suggestView1.events.add('select', function (e) {
-		console.log(e.get('item').value);
-		mgeocode(e.get('item').value);
-		});
-	suggestView2.events.add('select', function (e) {
-		console.log(e.get('item').value);
-		mgeocode(e.get('item').value);
-		});
-
 	myMap.events.add('click', function (e) {console.log("aqedan "+state); geocodeOnClick(e);   });
 	myicon = new ymaps.Placemark([42.24, 42.69], {hintContent: 'ჩემიიკონკა', balloonContent: 'ჩემიიკონკა'}, {iconLayout: 'default#image', iconImageHref: 'resources/pin_start.svg', iconImageSize: [30, 30], iconImageOffset: [-15, 0]  });
 	
