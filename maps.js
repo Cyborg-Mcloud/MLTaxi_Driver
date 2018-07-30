@@ -33,7 +33,16 @@ function initMap(ymaps)
 
 	positionMarker = new ymaps.Placemark([42.24, 42.69], {hintContent: 'ჯიპიესი', balloonContent: 'ჯიპიესი'}, {iconLayout: 'default#image', iconImageHref: 'resources/cursor.svg', iconImageSize: [30, 30], iconImageOffset: [-15, 0]  });
 	myMap.geoObjects.add(positionMarker);
-	setState(0);
+
+	thirdmarker = new ymaps.Placemark([0,0], {hintContent: 'დასასრული', balloonContent: 'დასასრული'}, {iconLayout: 'default#image', iconImageHref: 'resources/pin_red.svg', iconImageSize: [30, 30], iconImageOffset: [-15, 0]  });
+	myMap.geoObjects.add(thirdmarker);
+
+	startMarker = new ymaps.Placemark([0,0], {hintContent: 'სტარტი', balloonContent: 'სტარტი'}, {iconLayout: 'default#image', iconImageHref: 'resources/pin_start.svg', iconImageSize: [30, 30], iconImageOffset: [-15, 0]  });
+	myMap.geoObjects.add(startMarker);
+
+	endMarker = new ymaps.Placemark([0,0], {hintContent: 'დასასრული', balloonContent: 'დასასრული'}, {iconLayout: 'default#image', iconImageHref: 'resources/pin_end.svg', iconImageSize: [30, 30], iconImageOffset: [-15, 0]  });
+	myMap.geoObjects.add(endMarker);
+
 	}
 
 function handleOrientation(event) 
