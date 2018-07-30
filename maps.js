@@ -89,14 +89,14 @@ var dirsetmap=0;
 
 function calcRoute(from_loc, to_loc, third_loc, third_lata) 
 	{
-	var start = from_loc.geometry;
-	var end = to_loc.geometry;
+	var start = from_loc;
+	var end = to_loc;
 	last_route=Date.now()
 
 	if (third_lata>0)
 		{
 
-		var mtlad_end=third_loc.geometry;
+		var mtlad_end=third_loc;
 
 		console.log(mtlad_end);
 		myMap.geoObjects.remove(multiRoute);
@@ -117,7 +117,10 @@ function calcRoute(from_loc, to_loc, third_loc, third_lata)
 		myMap.geoObjects.add(multiRoute);
 	
 		}
-
+	if (myself==1)
+		{
+		myMap.panTo(positionMarker.geometry.getCoordinates());
+		}
 
 	}
 

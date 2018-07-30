@@ -383,16 +383,16 @@ function update_data()
 
 								if (call_dest_lat>30 )
 									{
-									var startpos = {lat: calllat, lng: calllong};
-									var endpos = {lat: call_dest_lat, lng: call_dest_long};
-									var thirdpos = {lat: call_dest_lat1, lng: call_dest_long1};
+									var startpos = [ calllat,  calllong];
+									var endpos = [ call_dest_lat, call_dest_long];
+									var thirdpos = [ call_dest_lat1,  call_dest_long1];
 									myself=0;
 									console.log("calcroute: ");
 									console.log(startpos);
 									console.log(endpos);
 									console.log(thirdpos);
 
-									calcRoute(startpos, endpos, dirService, dirRender, thirdpos, call_dest_lat1);
+									calcRoute(startpos, endpos, thirdpos, call_dest_lat1);
 									
 
 									}
@@ -440,10 +440,13 @@ function update_data()
 					ertxelmainc=1;
 					if (calllat>30 && (this_time-last_route)>10 && mystatus!=1)
 						{
-						var startpos = {lat: MyLat, lng: MyLong};
-						var endpos = {lat: calllat, lng: calllong};
-						var thirdpos = {lat: call_dest_lat1, lng: call_dest_long1};
-						calcRoute(startpos, endpos, dirService, dirRender, thirdpos, 0);
+					
+
+
+						var startpos = [ MyLat,  MyLong];
+						var endpos = [ calllat, calllong];
+						var thirdpos = [ call_dest_lat1,  call_dest_long1];
+						calcRoute(startpos, endpos, thirdpos, 0);
 						}
 
 					if (callid!=curid && myself==0)
@@ -487,10 +490,10 @@ function update_data()
 					ertxelmainc=1;
 					if (call_dest_lat>30 && (this_time-last_route)>10  &&  mystatus!=3)
 						{
-						var startpos = {lat: MyLat, lng: MyLong};
-						var endpos = {lat: calllat, lng: calllong};
-						var thirdpos = {lat: call_dest_lat1, lng: call_dest_long1};
-						calcRoute(startpos, endpos, dirService, dirRender, thirdpos, 0);
+						var startpos = [ MyLat,  MyLong];
+						var endpos = [ calllat, calllong];
+						var thirdpos = [ call_dest_lat1,  call_dest_long1];
+						calcRoute(startpos, endpos, thirdpos, 0);
 						}
 					draw_markers();
 					set_status(3);
@@ -530,10 +533,12 @@ function update_data()
 					ertxelmainc=1;
 					if (call_dest_lat>30 && (this_time-last_route)>30  && mystatus!=4)
 						{
-						var startpos = {lat: MyLat, lng: MyLong};
-						var endpos = {lat: call_dest_lat, lng: call_dest_long};
-						var thirdpos = {lat: call_dest_lat1, lng: call_dest_long1};
-						calcRoute(startpos, endpos, dirService, dirRender, thirdpos, call_dest_lat1);
+					
+						
+						var startpos = [ MyLat,  MyLong];
+						var endpos = [ call_dest_lat, call_dest_long];
+						var thirdpos = [ call_dest_lat1,  call_dest_long1];
+						calcRoute(startpos, endpos, thirdpos, call_dest_lat1);
 						}
 					draw_markers();
 					set_status(4);
@@ -583,11 +588,12 @@ function update_data()
 					ertxelmainc=1;
 					if (call_dest_lat>30 && (this_time-last_route)>10)// &&  mystatus!=5)
 						{
-						var startpos = {lat: MyLat, lng: MyLong};
-						var endpos = {lat: call_dest_lat, lng: call_dest_long};
-						var thirdpos = {lat: call_dest_lat1, lng: call_dest_long1};
-						calcRoute(startpos, endpos, dirService, dirRender, thirdpos, call_dest_lat1);
+					
 
+						var startpos = [ MyLat,  MyLong];
+						var endpos = [ call_dest_lat, call_dest_long];
+						var thirdpos = [ call_dest_lat1,  call_dest_long1];
+						calcRoute(startpos, endpos, thirdpos, call_dest_lat1);
 						}
 					if (callid!=curid && myself==0)
 						{
@@ -934,6 +940,9 @@ function draw_markers()
 	{
 //	var myLatLng = {lat: calllat, lng: calllong};
 
+	myMap.geoObjects.remove(startMarker);
+	myMap.geoObjects.remove(endMarker);
+	myMap.geoObjects.remove(thirdmarker);
 
 	startMarker = new ymaps.Placemark([calllat,calllong], {hintContent: 'სტარტი', balloonContent: 'სტარტი'}, {iconLayout: 'default#image', iconImageHref: 'resources/pin_start.svg', iconImageSize: [30, 30], iconImageOffset: [-15, 0]  });
 	myMap.geoObjects.add(startMarker);
