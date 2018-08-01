@@ -17,7 +17,7 @@ city_bounds[1][1]=42.745228;
 
 function initMap(ymaps) 
 	{
-	myMap = new ymaps.Map("gmap", {center: [MyLat, MyLong], zoom: 14}, {searchControlProvider: 'yandex#search'});
+	myMap = new ymaps.Map("gmap", {center: [MyLat, MyLong], zoom: 14, controls: []}, {searchControlProvider: 'yandex#search'});
 	var card = document.getElementById('pac-card');
     var input = document.getElementById('pac-input');
     var input2 = document.getElementById('pac-input2');
@@ -25,6 +25,17 @@ function initMap(ymaps)
     var strictBounds = document.getElementById('strict-bounds-selector');
 
 	
+	myMap.controls.remove("routeEditor");
+	myMap.controls.remove("geolocationControl");
+	myMap.controls.remove("searchControl");
+	myMap.controls.remove("trafficControl");
+	myMap.controls.remove("typeSelector");
+	myMap.controls.remove("fullscreenControl");
+	myMap.controls.remove("zoomControl");
+	myMap.controls.remove("rulerControl");
+	myMap.controls.remove("routeEditor");
+
+
 	myMap.events.add('click', function (e) {console.log("aqedan "+state); geocodeOnClick(e);   });
 	myicon = new ymaps.Placemark([42.24, 42.69], {hintContent: 'ჩემიიკონკა', balloonContent: 'ჩემიიკონკა'}, {iconLayout: 'default#image', iconImageHref: 'resources/pin_start.svg', iconImageSize: [30, 30], iconImageOffset: [-15, 0]  });
 	

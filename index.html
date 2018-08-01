@@ -447,6 +447,7 @@ function update_data()
 						var endpos = [ calllat, calllong];
 						var thirdpos = [ call_dest_lat1,  call_dest_long1];
 						calcRoute(startpos, endpos, thirdpos, 0);
+						myMap.panTo(positionMarker.geometry.getCoordinates());
 						}
 
 					if (callid!=curid && myself==0)
@@ -594,6 +595,7 @@ function update_data()
 						var endpos = [ call_dest_lat, call_dest_long];
 						var thirdpos = [ call_dest_lat1,  call_dest_long1];
 						calcRoute(startpos, endpos, thirdpos, call_dest_lat1);
+						myMap.panTo(positionMarker.geometry.getCoordinates());
 						}
 					if (callid!=curid && myself==0)
 						{
@@ -1009,7 +1011,7 @@ function doOnOrientationChange()
 </div>
 	
 
-<a href='Javascript: setme();' style='position:fixed; top:130px; right:5px; margin:5px; z-index:252; '><img id='cbut' src='assets/images/dir_arrow.png' style='width:40px; height:40px;'></a>
+<a href='Javascript: setme();' style='position:fixed; top:130px; right:5px; margin:5px; z-index:502; '><img id='cbut' src='assets/images/dir_arrow.png' style='width:40px; height:40px;'></a>
 
 
 <!--<a href='Javascript: set_client();' style='position:fixed; bottom:50px; left:5px; margin:5px; z-index:252; '  id='client_center' style='display:none;'><img id='client_but' src='client_icon.png'></a> <!--visibility:hidden-->
@@ -1635,6 +1637,7 @@ function setme()
 		{myself=0;
 		//document.getElementById("cbut").src='center.svg';
 		}
+	console.log("myself: "+myself);
 
 	}
 
