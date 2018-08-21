@@ -452,7 +452,7 @@ function update_data()
 						{
 //						setme();
 						}
-					draw_markers();
+					if (mystatus!=1)	{draw_markers();}
 					set_status(1);
 					last_status=mystatus;
 					}
@@ -495,7 +495,7 @@ function update_data()
 						auto_bounds=false;
 						calcRoute(startpos, endpos, thirdpos, 0);
 						}
-					draw_markers();
+					if (mystatus!=3)	{draw_markers();}
 					set_status(3);
 					last_status=mystatus;
 					}
@@ -539,7 +539,7 @@ function update_data()
 						auto_bounds=false;
 						calcRoute(startpos, endpos, thirdpos, call_dest_lat1);
 						}
-					draw_markers();
+					if (mystatus!=4)	{draw_markers();}
 					set_status(4);
 					last_status=mystatus;
 					}
@@ -600,7 +600,7 @@ function update_data()
 						{
 						//setme();
 						}
-					draw_markers();
+					if (mystatus!=5)	{draw_markers();}
 					set_status(5);
 					last_status=mystatus;
 					}
@@ -939,7 +939,7 @@ function onWatchSuccess(position)
 
 function draw_markers()
 	{
-//	var myLatLng = {lat: calllat, lng: calllong};
+
 
 	myMap.geoObjects.remove(startMarker);
 	myMap.geoObjects.remove(endMarker);
@@ -950,20 +950,15 @@ function draw_markers()
 
 	if (call_dest_lat>0)
 		{
-//		var myLatLng = {lat: call_dest_lat, lng: call_dest_long};
 		endMarker = new ymaps.Placemark([call_dest_lat,call_dest_long], {hintContent: 'დასასრული', balloonContent: 'დასასრული'}, {iconLayout: 'default#image', iconImageHref: 'resources/pin_end.svg', iconImageSize: [30, 30], iconImageOffset: [-15, 0]  });
 		myMap.geoObjects.add(endMarker);
 		}
 
 	if (call_dest_lat1>0)
 		{
-		//var myLatLng = {lat: call_dest_lat1, lng: call_dest_long1};
 		console.log("third marker: ");
-//		console.log(myLatLng);
 		thirdmarker = new ymaps.Placemark([call_dest_lat1,call_dest_long1], {hintContent: 'დასასრული', balloonContent: 'დასასრული'}, {iconLayout: 'default#image', iconImageHref: 'resources/pin_red.svg', iconImageSize: [30, 30], iconImageOffset: [-15, 0]  });
 		myMap.geoObjects.add(thirdmarker);
-		
-		
 		}
 	}
 

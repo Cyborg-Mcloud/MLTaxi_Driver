@@ -111,7 +111,7 @@ function calcRoute(from_loc, to_loc, third_loc, third_lata)
 		myMap.geoObjects.remove(multiRoute);
 		myMap.geoObjects.remove(multiRoute2);
 		multiRoute2 = new ymaps.multiRouter.MultiRoute({
-		referencePoints: [ start, end, mtlad_end ], params: {results: 2} }, {boundsAutoApply: auto_bounds});
+		referencePoints: [ start, end, mtlad_end ], params: {results: 2} }, {boundsAutoApply: auto_bounds, wayPointVisible: false});
 		myMap.geoObjects.add(multiRoute2);
 		}
 	else
@@ -119,7 +119,7 @@ function calcRoute(from_loc, to_loc, third_loc, third_lata)
 		myMap.geoObjects.remove(multiRoute);
 		myMap.geoObjects.remove(multiRoute2);
 		multiRoute = new ymaps.multiRouter.MultiRoute({
-		referencePoints: [ start, end], params: {results: 2} }, {boundsAutoApply: auto_bounds});
+		referencePoints: [ start, end], params: {results: 2} }, {boundsAutoApply: auto_bounds, wayPointVisible: false});
 		myMap.geoObjects.add(multiRoute);
 		}
 	if (myself==1)
