@@ -97,6 +97,7 @@ var state = 0;
 var dirsetmap=0;
 
 var auto_bounds=false;
+var erase_last=true;
 
 function calcRoute(from_loc, to_loc, third_loc, third_lata) 
 	{
@@ -108,6 +109,7 @@ function calcRoute(from_loc, to_loc, third_loc, third_lata)
 		{
 		var mtlad_end=third_loc;
 		console.log(mtlad_end);
+		
 		myMap.geoObjects.remove(multiRoute);
 		myMap.geoObjects.remove(multiRoute2);
 		multiRoute2 = new ymaps.multiRouter.MultiRoute({
