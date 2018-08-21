@@ -391,7 +391,7 @@ function update_data()
 									console.log(startpos);
 									console.log(endpos);
 									console.log(thirdpos);
-
+									auto_bounds=true;
 									calcRoute(startpos, endpos, thirdpos, call_dest_lat1);
 									
 
@@ -440,14 +440,12 @@ function update_data()
 					ertxelmainc=1;
 					if (calllat>30 && (this_time-last_route)>10 && mystatus!=1)
 						{
-					
-
-
 						var startpos = [ MyLat,  MyLong];
 						var endpos = [ calllat, calllong];
 						var thirdpos = [ call_dest_lat1,  call_dest_long1];
+						auto_bounds=false;
 						calcRoute(startpos, endpos, thirdpos, 0);
-						myMap.panTo(positionMarker.geometry.getCoordinates());
+						//myMap.panTo(positionMarker.geometry.getCoordinates());
 						}
 
 					if (callid!=curid && myself==0)
@@ -487,13 +485,14 @@ function update_data()
 					appr_price=parseInt(b[14]);
 					depoz=parseFloat(b[15]);
 					console.log(call_dest_lat1+" <- -> "+call_dest_long1);
-										console.log("mesame misamarti: "+call_dest_addr1);
+					console.log("mesame misamarti: "+call_dest_addr1);
 					ertxelmainc=1;
 					if (call_dest_lat>30 && (this_time-last_route)>10  &&  mystatus!=3)
 						{
 						var startpos = [ MyLat,  MyLong];
 						var endpos = [ calllat, calllong];
 						var thirdpos = [ call_dest_lat1,  call_dest_long1];
+						auto_bounds=false;
 						calcRoute(startpos, endpos, thirdpos, 0);
 						}
 					draw_markers();
@@ -502,7 +501,7 @@ function update_data()
 					}
 				else if (a[0]=="usercoming")
 					{
-						sel_call_id=-1;
+					sel_call_id=-1;
 					callconfirming=0;
 //					document.getElementById("client_center").style.display="inline";
 					b=a[1].split(";");
@@ -533,12 +532,11 @@ function update_data()
 					console.log("mesame misamarti: "+call_dest_addr1);
 					ertxelmainc=1;
 					if (call_dest_lat>30 && (this_time-last_route)>30  && mystatus!=4)
-						{
-					
-						
+						{						
 						var startpos = [ MyLat,  MyLong];
 						var endpos = [ call_dest_lat, call_dest_long];
 						var thirdpos = [ call_dest_lat1,  call_dest_long1];
+						auto_bounds=false;
 						calcRoute(startpos, endpos, thirdpos, call_dest_lat1);
 						}
 					draw_markers();
@@ -594,8 +592,9 @@ function update_data()
 						var startpos = [ MyLat,  MyLong];
 						var endpos = [ call_dest_lat, call_dest_long];
 						var thirdpos = [ call_dest_lat1,  call_dest_long1];
+						auto_bounds=false;
 						calcRoute(startpos, endpos, thirdpos, call_dest_lat1);
-						myMap.panTo(positionMarker.geometry.getCoordinates());
+//						myMap.panTo(positionMarker.geometry.getCoordinates());
 						}
 					if (callid!=curid && myself==0)
 						{

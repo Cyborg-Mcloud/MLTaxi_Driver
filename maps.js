@@ -96,7 +96,7 @@ function rotate_marker(kutxe)
 var state = 0;
 var dirsetmap=0;
 
-
+var auto_bounds=false;
 
 function calcRoute(from_loc, to_loc, third_loc, third_lata) 
 	{
@@ -106,27 +106,21 @@ function calcRoute(from_loc, to_loc, third_loc, third_lata)
 
 	if (third_lata>0)
 		{
-
 		var mtlad_end=third_loc;
-
 		console.log(mtlad_end);
 		myMap.geoObjects.remove(multiRoute);
 		myMap.geoObjects.remove(multiRoute2);
 		multiRoute2 = new ymaps.multiRouter.MultiRoute({
-		referencePoints: [ start, end, mtlad_end ], params: {results: 2} }, {boundsAutoApply: true});
+		referencePoints: [ start, end, mtlad_end ], params: {results: 2} }, {boundsAutoApply: auto_bounds});
 		myMap.geoObjects.add(multiRoute2);
-	
-	
-
 		}
 	else
 		{
 		myMap.geoObjects.remove(multiRoute);
 		myMap.geoObjects.remove(multiRoute2);
 		multiRoute = new ymaps.multiRouter.MultiRoute({
-		referencePoints: [ start, end], params: {results: 2} }, {boundsAutoApply: true});
+		referencePoints: [ start, end], params: {results: 2} }, {boundsAutoApply: auto_bounds});
 		myMap.geoObjects.add(multiRoute);
-	
 		}
 	if (myself==1)
 		{
