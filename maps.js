@@ -119,7 +119,9 @@ function calcRoute(from_loc, to_loc, third_loc, third_lata)
 			multiRoute = new ymaps.multiRouter.MultiRoute({
 			referencePoints: [ start, end, mtlad_end ], params: {results: 2} }, {boundsAutoApply: auto_bounds, wayPointVisible: false});
 			myMap.geoObjects.add(multiRoute);
-			myMap.geoObjects.remove(multiRoute2);
+			multiRoute.model.events.add("requestsuccess", function (event) {
+				myMap.geoObjects.remove(multiRoute2);
+				});
 			cur_route=1;
 			}
 		else
@@ -127,7 +129,9 @@ function calcRoute(from_loc, to_loc, third_loc, third_lata)
 			multiRoute2 = new ymaps.multiRouter.MultiRoute({
 			referencePoints: [ start, end, mtlad_end ], params: {results: 2} }, {boundsAutoApply: auto_bounds, wayPointVisible: false});
 			myMap.geoObjects.add(multiRoute2);
-			myMap.geoObjects.remove(multiRoute);
+			multiRoute2.model.events.add("requestsuccess", function (event) {
+				myMap.geoObjects.remove(multiRoute);
+				});
 			}
 		}
 	else
@@ -137,7 +141,10 @@ function calcRoute(from_loc, to_loc, third_loc, third_lata)
 			multiRoute = new ymaps.multiRouter.MultiRoute({
 			referencePoints: [ start, end], params: {results: 2} }, {boundsAutoApply: auto_bounds, wayPointVisible: false});
 			myMap.geoObjects.add(multiRoute);
-			myMap.geoObjects.remove(multiRoute2);
+			multiRoute.model.events.add("requestsuccess", function (event) {
+				myMap.geoObjects.remove(multiRoute2);
+				});
+			//myMap.geoObjects.remove(multiRoute2);
 			cur_route=1;
 			}
 		else
@@ -145,7 +152,10 @@ function calcRoute(from_loc, to_loc, third_loc, third_lata)
 			multiRoute2 = new ymaps.multiRouter.MultiRoute({
 			referencePoints: [ start, end], params: {results: 2} }, {boundsAutoApply: auto_bounds, wayPointVisible: false});
 			myMap.geoObjects.add(multiRoute2);
-			myMap.geoObjects.remove(multiRoute);
+			multiRoute2.model.events.add("requestsuccess", function (event) {
+				myMap.geoObjects.remove(multiRoute);
+				});
+			
 			cur_route=0;
 			}
 		
