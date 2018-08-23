@@ -1313,6 +1313,9 @@ function userpay(pmethod)
 		var metrebi_real=parseInt(metrebi*1.12*100)/100;
 		var	tanxa=datvale_pussy(metrebi_real);
 
+		myMap.geoObjects.remove(multiRoute);
+		myMap.geoObjects.remove(multiRoute2);
+
 
 //		tanxa=1+parseInt((call_meters/1000)*0.75*100)/100;
 		url="http://mltaxi.ge/pay.php?uname="+MyUser+"&pass="+MyPass+"&id="+callid+"&pmethod="+pmethod+"&amount="+tanxa;
