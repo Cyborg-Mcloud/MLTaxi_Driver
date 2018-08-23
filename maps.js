@@ -99,6 +99,8 @@ var dirsetmap=0;
 var auto_bounds=false;
 var erase_last=true;
 
+var cur_route=0;
+
 function calcRoute(from_loc, to_loc, third_loc, third_lata) 
 	{
 	var start = from_loc;
@@ -110,19 +112,44 @@ function calcRoute(from_loc, to_loc, third_loc, third_lata)
 		var mtlad_end=third_loc;
 		console.log(mtlad_end);
 		
-		myMap.geoObjects.remove(multiRoute);
-		myMap.geoObjects.remove(multiRoute2);
-		multiRoute2 = new ymaps.multiRouter.MultiRoute({
-		referencePoints: [ start, end, mtlad_end ], params: {results: 2} }, {boundsAutoApply: auto_bounds, wayPointVisible: false});
-		myMap.geoObjects.add(multiRoute2);
+	
+		
+		if (cur_route==0)
+			{
+			multiRoute = new ymaps.multiRouter.MultiRoute({
+			referencePoints: [ start, end, mtlad_end ], params: {results: 2} }, {boundsAutoApply: auto_bounds, wayPointVisible: false});
+			myMap.geoObjects.add(multiRoute);
+			myMap.geoObjects.remove(multiRoute2);
+			cur_route=1;
+			}
+		else
+			{
+			multiRoute2 = new ymaps.multiRouter.MultiRoute({
+			referencePoints: [ start, end, mtlad_end ], params: {results: 2} }, {boundsAutoApply: auto_bounds, wayPointVisible: false});
+			myMap.geoObjects.add(multiRoute2);
+			myMap.geoObjects.remove(multiRoute);
+			}
 		}
 	else
 		{
-		myMap.geoObjects.remove(multiRoute);
-		myMap.geoObjects.remove(multiRoute2);
-		multiRoute = new ymaps.multiRouter.MultiRoute({
-		referencePoints: [ start, end], params: {results: 2} }, {boundsAutoApply: auto_bounds, wayPointVisible: false});
-		myMap.geoObjects.add(multiRoute);
+		if (cur_route==0)
+			{
+			multiRoute = new ymaps.multiRouter.MultiRoute({
+			referencePoints: [ start, end], params: {results: 2} }, {boundsAutoApply: auto_bounds, wayPointVisible: false});
+			myMap.geoObjects.add(multiRoute);
+			myMap.geoObjects.remove(multiRoute2);
+			cur_route=1;
+			}
+		else
+			{
+			multiRoute2 = new ymaps.multiRouter.MultiRoute({
+			referencePoints: [ start, end], params: {results: 2} }, {boundsAutoApply: auto_bounds, wayPointVisible: false});
+			myMap.geoObjects.add(multiRoute2);
+			myMap.geoObjects.remove(multiRoute);
+			cur_route=0;
+			}
+		
+	
 		}
 	if (myself==1)
 		{
