@@ -627,6 +627,15 @@ function update_data()
 					{
 					sel_call_id=-1;
 					depoz=parseFloat(a[1]);
+					if (b.length>16) 
+						{
+						sit_price[1]=parseInt(a[2]);
+						kmprice[1]=parseFloat(a[3]);
+						sit_price[2]=parseInt(a[4]);
+						kmprice[2]=parseFloat(a[5]);
+						sit_price[3]=parseInt(a[6]);
+						kmprice[3]=parseFloat(a[7]);
+						}
 					document.getElementById("mbal").innerHTML=depoz+"₾";
 					callconfirming=0;
 //					document.getElementById("client_center").style.display="none";
@@ -667,36 +676,7 @@ function update_data()
 					}
 				if (inpause==0)	{DrawUsers();}
 
-				if (userebic==1)
-					{
-					a=mr.split("|");
-					for (i=0;i<(a.length-1);i++ )
-						{
-						if (a[i]!="")
-							{
-							
-							b=a[i].split(";");
-							
-							var curid=b[0];
-
-							if ( document.getElementById("user_"+curid)==null)
-								{
-								document.getElementById("users").innerHTML+="<div id='user_"+curid+"'  style='position:absolute; left:0px; top:0px; color:red; font-size:12px; font-weight:bold;'><div style='position:absolute; left:-16px; top:-16px; width:32px; height:32px;'><img src='taxizm.png'></div></div>"; //&nbsp;&nbsp;"+b[1]+"
-								}
-							userids[i]=curid;
-							usernames[i]=b[1];
-							userlats[i]=parseFloat(b[2]);
-							userlongs[i]=parseFloat(b[3]);
-							useralts[i]=parseFloat(b[4]);
-							userspeeds[i]=parseFloat(b[5]);
-							userheads[i]=parseFloat(b[6]);
-							userlasts[i]=parseInt(b[7]);
-							}
-						}
-					var tdata=a[a.length-1];
-
-					if (inpause==0)	{DrawUsers();}
-					}
+				
 
 				}
 			}
